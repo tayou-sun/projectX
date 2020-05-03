@@ -11,6 +11,11 @@ import { EventCreateComponent } from './event-create/event-create.component';
 import { NativeScriptDateTimePickerModule } from "nativescript-datetimepicker/angular";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProblemSearchComponent } from './problem-search/problem-search.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { TasksService } from "./services/tasks.service";
+import { HttpClientModule } from "@angular/common/http";
+import { TaskCreateComponent } from './task-create/task-create.component';
+
 
 @NgModule({
     bootstrap: [
@@ -22,17 +27,23 @@ import { ProblemSearchComponent } from './problem-search/problem-search.componen
         NativeScriptFormsModule,
         NativeScriptUISideDrawerModule,
         NativeScriptDateTimePickerModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        HttpClientModule
     ],
     declarations: [
         AppComponent,
         CalendarComponent,
         EventCreateComponent,
         ProblemSearchComponent,
+        TasksComponent,
+        TaskCreateComponent,
         
     ],
     schemas: [
         NO_ERRORS_SCHEMA
-    ]
+    ],
+    providers:[
+        TasksService
+    ],
 })
 export class AppModule { }

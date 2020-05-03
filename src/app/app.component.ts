@@ -13,5 +13,10 @@ export class AppComponent {
     chooseCity(event){
         this.router.navigateByUrl("/calendar");
     }
+
+    chooseTasks(event){
+        this.router.navigateByUrl("/tasks");
+        console.log('task clicked');
+    }
     
  }

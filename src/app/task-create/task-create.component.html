@@ -1,0 +1,17 @@
+<ActionBar title="Добавить задачу" class="action-bar">
+</ActionBar>
+
+
+<GridLayout rows="auto, *">
+
+    <StackLayout class="home-panel">
+        <TextField [(ngModel)]="task.title" hint="Введите заголовок..." autocorrect="true"></TextField>
+        <GridLayout columns="auto,100" rows="auto,auto" horizontalAlignment="left" verticalAlignment="top" с>
+            <Label text="Повторять" col="0" row="0"></Label>
+            <Switch checked="true"  col="1" row="0"></Switch> 
+        </GridLayout>
+        <RadCalendar></RadCalendar>   
+        <Button text="Сохранить" class="btn btn-primary" (tap)="onCreateButtonClick($event)"></Button>
+    </StackLayout>
+
+</GridLayout>

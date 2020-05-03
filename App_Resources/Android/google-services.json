@@ -1,0 +1,47 @@
+{
+    "project_info": {
+      "project_number": "378723656166",
+      "firebase_url": "https://helloworld-c41c7.firebaseio.com",
+      "project_id": "helloworld-c41c7",
+      "storage_bucket": "helloworld-c41c7.appspot.com"
+    },
+    "client": [
+      {
+        "client_info": {
+          "mobilesdk_app_id": "1:378723656166:android:5648104afea57cdc42b627",
+          "android_client_info": {
+            "package_name": "com.test.test"
+          }
+        },
+        "oauth_client": [
+          {
+            "client_id": "378723656166-viil9fm3tkbdjep5bbg32urca6mf5adv.apps.googleusercontent.com",
+            "client_type": 3
+          }
+        ],
+        "api_key": [
+          {
+            "current_key": "AIzaSyCJ69c6tifDH60C_NkyTiV1151oXYnQIHc"
+          }
+        ],
+        "services": {
+          "appinvite_service": {
+            "other_platform_oauth_client": [
+              {
+                "client_id": "378723656166-viil9fm3tkbdjep5bbg32urca6mf5adv.apps.googleusercontent.com",
+                "client_type": 3
+              },
+              {
+                "client_id": "378723656166-q53h502s28ru8alccfu6heqm71iqn45j.apps.googleusercontent.com",
+                "client_type": 2,
+                "ios_info": {
+                  "bundle_id": "com.hello-world.hello-world"
+                }
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "configuration_version": "1"
+  }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as calendarModule from "nativescript-ui-calendar";
-import { Color } from "color";
+import { Color } from 'tns-core-modules/color/color';
 import {Router} from '@angular/router';
 
 @Component({
@@ -39,6 +39,7 @@ export class CalendarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+      console.log('init');
   }
 
   onDateSelected(args) {
