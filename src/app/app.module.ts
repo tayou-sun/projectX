@@ -13,9 +13,12 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProblemSearchComponent } from './problem-search/problem-search.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TasksService } from "./services/tasks.service";
-import { HttpClientModule } from "@angular/common/http";
 import { TaskCreateComponent } from './task-create/task-create.component';
 
+import { ArticlesComponent } from './articles/articles.component';
+import { ArticlesDataService } from "./articles/article.data.service";
+import { HttpClientModule } from "@angular/common/http";
+import { NgShadowModule } from 'nativescript-ng-shadow';
 
 @NgModule({
     bootstrap: [
@@ -28,7 +31,8 @@ import { TaskCreateComponent } from './task-create/task-create.component';
         NativeScriptUISideDrawerModule,
         NativeScriptDateTimePickerModule,
         FontAwesomeModule,
-        HttpClientModule
+        HttpClientModule,
+        NgShadowModule
     ],
     declarations: [
         AppComponent,
@@ -37,13 +41,15 @@ import { TaskCreateComponent } from './task-create/task-create.component';
         ProblemSearchComponent,
         TasksComponent,
         TaskCreateComponent,
+        ArticlesComponent,
         
+    ],
+    providers:[
+        ArticlesDataService,
+        TasksService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
-    ],
-    providers:[
-        TasksService
-    ],
+    ]
 })
 export class AppModule { }

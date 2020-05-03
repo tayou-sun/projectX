@@ -5,6 +5,7 @@ import { CalendarComponent } from "./calendar/calendar.component";
 import { EventCreateComponent } from "./event-create/event-create.component";
 import { TasksComponent } from "./tasks/tasks.component";
 import { TaskCreateComponent } from "./task-create/task-create.component";
+import { ArticlesComponent } from "./articles/articles.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -12,7 +13,8 @@ const routes: Routes = [
     { path: "calendar", component: CalendarComponent },
     { path: "eventcreate", component: EventCreateComponent },
     {path: "tasks", component: TasksComponent},
-    {path: "tasks-create", component: TaskCreateComponent}
+    {path: "tasks-create", component: TaskCreateComponent},
+    { path: "articles", component: ArticlesComponent }
 ];
 
 @NgModule({

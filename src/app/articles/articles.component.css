@@ -1,0 +1,46 @@
+.article-image {
+    border-radius: 3;
+    margin: 8 16;
+    width: 90;
+    height: 90;
+    
+}
+.article-title {
+    
+    font-size: 20;
+    font-weight: 400;
+}
+
+
+.action-label{
+    font-size: 12px;
+    margin: 0 8;
+}
+
+.article-description {
+    color: grey;
+}
+
+.card {
+    background-color: #fff;  
+    box-shadow: 9px -8px 0 0 cadetblue;
+}
+
+.article-border{
+    background-color: lightgray;
+    margin-bottom: 10px;
+    padding-bottom: 30px;
+    margin: 5;
+}
+
+.link-label{
+    color: orange;
+    font-weight: 800;
+}
+
+.favourite-label{
+
+    color: black;
+    font-weight: 800;
+}
+

@@ -18,7 +18,12 @@
                     <Label row="2" col="1" text="Задачи" class="m-t-30 m-l-20 sidedrawer-item" (tap)="chooseTasks($event)"></Label>
                 </GridLayout>
 
-               
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                title="Календарь"  >
+                <Label row="0" col="0" text="&#xf015;" text=""></Label>
+                <Label row="0" col="1" text="Советы" class="m-l-20 sidedrawer-item" (tap)="openArticles($event)"></Label>
+            </GridLayout>
+
 
             </StackLayout>
         </ScrollView>

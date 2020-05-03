@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as calendarModule from "nativescript-ui-calendar";
-import { Color } from 'tns-core-modules/color/color';
 import {Router} from '@angular/router';
+import { Color } from 'tns-core-modules/color/color';
 
 @Component({
   selector: 'ns-calendar',

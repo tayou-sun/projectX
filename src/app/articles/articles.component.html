@@ -1,0 +1,21 @@
+<ListView [items]="articles"  separatorColor="transparent">
+    <ng-template let-item="item">
+        <GridLayout rows="*, auto" columns="auto, *, auto" class="card" >
+            <Image class="article-image thumb-with-background" stretch="aspectFill" [src]="item.imgUrl"></Image>
+
+            <StackLayout col="1" verticalAlignment="center">
+                <Label class="article-title" [text]="item.title" textWrap="true"></Label>
+                <Label class="article-description" [text]="item.description" textWrap="true"></Label>
+
+            </StackLayout>
+
+           
+
+            <DockLayout  top="5" row="2" col="1" columns="*,*" rows="2*,3*" verticalAlignment="center"   tretchLastChild="true">
+                <Button class="action-label favourite-label" row="0"  col="0" text="В ИЗБРАННОЕ" textWrap="true" (tap)="addFavourite(item.id)"></Button>
+                <Label class="action-label link-label"  row="0" col="1" text="ПРОСМОТР" textWrap="true" (tap)="openLink(item.articleUrl)"></Label>
+            </DockLayout >
+
+        </GridLayout>
+    </ng-template>
+</ListView>

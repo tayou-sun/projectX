@@ -19,4 +19,7 @@ export class AppComponent {
         console.log('task clicked');
     }
     
+    openArticles(event){
+        this.router.navigateByUrl("/articles");  
+    }
  }
