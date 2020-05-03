@@ -25,15 +25,15 @@ export class ProblemSearchComponent implements OnInit {
 	public isFrom: boolean = false;
 
 	constructor(private _params: ModalDialogParams, private _page: Page, private router: RouterExtensions, private _activeRoute: ActivatedRoute) {
-		this.arrayAirports.push(new DataItem("Rotterdam The Hague Airport"));
-		this.arrayAirports.push(new DataItem("Chiclayo Capitán FAP José Quiñones G. Airport"));
-		this.arrayAirports.push(new DataItem("Lima Jorge Chávez International Airport"));
-		this.arrayAirports.push(new DataItem("Arequipa Rodríguez Ballón Airport"));
-		this.arrayAirports.push(new DataItem("Cuzco Alejandro Velazco Astete Airport"));
-		this.arrayAirports.push(new DataItem("Atlanta Hartsfield-Jackson International Airport"));
-		this.arrayAirports.push(new DataItem("New York John F. Kennedy International Airport"));
-		this.arrayAirports.push(new DataItem("New York LaGuardia Airport"));
-		this.arrayAirports.push(new DataItem("San Diego International Airport"));
+		this.arrayAirports.push(new DataItem("1"));
+		this.arrayAirports.push(new DataItem("2"));
+		this.arrayAirports.push(new DataItem("3"));
+		this.arrayAirports.push(new DataItem("4"));
+		this.arrayAirports.push(new DataItem("5"));
+		this.arrayAirports.push(new DataItem("6"));
+		this.arrayAirports.push(new DataItem("7"));
+		this.arrayAirports.push(new DataItem("8"));
+		this.arrayAirports.push(new DataItem("7"));
 
 		this.airports = new ObservableArray<DataItem>(this.arrayAirports);
 
