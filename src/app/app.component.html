@@ -1,0 +1,30 @@
+
+<RadSideDrawer drawerTransition="PushTransition">
+
+    <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
+        <StackLayout class="sidedrawer-header">
+           
+        </StackLayout>
+
+        <ScrollView row="1">
+            <StackLayout class="sidedrawer-content">
+
+                <StackLayout class="hr-light"></StackLayout>
+
+                <GridLayout columns="auto, *" class="sidedrawer-list-item"
+                    title="Календарь"  >
+                    <Label row="0" col="0" text="&#xf015;" text=""></Label>
+                    <Label row="0" col="1" text="Календарь" class="m-l-20 sidedrawer-item" (tap)="chooseCity($event)"></Label>
+                </GridLayout>
+
+               
+
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
+
+    <page-router-outlet tkMainContent ></page-router-outlet>
+
+  
+</RadSideDrawer>
+
