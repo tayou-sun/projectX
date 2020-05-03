@@ -6,14 +6,14 @@
     $ npm install -g nativescript
 ```
 
-## Run npm install 
+## run npm install 
 
 ``` sh
     $ npm i
 ```
 
 
-## Start project 
+## start project 
 
 ``` sh
     $ tns preview
