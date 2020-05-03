@@ -14,4 +14,7 @@ export class AppComponent {
         this.router.navigateByUrl("/calendar");
     }
     
+    openArticles(event){
+        this.router.navigateByUrl("/articles");  
+    }
  }

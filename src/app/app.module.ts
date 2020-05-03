@@ -11,6 +11,10 @@ import { EventCreateComponent } from './event-create/event-create.component';
 import { NativeScriptDateTimePickerModule } from "nativescript-datetimepicker/angular";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProblemSearchComponent } from './problem-search/problem-search.component';
+import { ArticlesComponent } from './articles/articles.component';
+import { ArticlesDataService } from "./articles/article.data.service";
+import { HttpClientModule } from "@angular/common/http";
+import { NgShadowModule } from 'nativescript-ng-shadow';
 
 @NgModule({
     bootstrap: [
@@ -22,14 +26,20 @@ import { ProblemSearchComponent } from './problem-search/problem-search.componen
         NativeScriptFormsModule,
         NativeScriptUISideDrawerModule,
         NativeScriptDateTimePickerModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        HttpClientModule,
+        NgShadowModule
     ],
     declarations: [
         AppComponent,
         CalendarComponent,
         EventCreateComponent,
         ProblemSearchComponent,
+        ArticlesComponent,
         
+    ],
+    providers:[
+        ArticlesDataService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
