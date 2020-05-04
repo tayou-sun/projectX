@@ -30,6 +30,7 @@
     "nativescript-checkbox": "^3.0.3",
     "nativescript-datetimepicker": "^1.2.2",
     "nativescript-floatingactionbutton": "^5.1.0",
+    "nativescript-modal-datetimepicker": "^1.2.2",
     "nativescript-ng-shadow": "^2.1.0",
     "nativescript-plugin-firebase": "^10.5.2",
     "nativescript-push-notifications": "^1.1.6",

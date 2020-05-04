@@ -47,6 +47,8 @@ onItemTap(args: ItemEventData): void {
   ngOnInit(): void {
     this.taskService.getTasks().subscribe((x:Task[])=>{
       this.tasks = x;
+      
+
       console.log(this.tasks);
     });
     console.log('task init');

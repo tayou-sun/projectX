@@ -5,12 +5,20 @@
 <GridLayout rows="auto, *">
 
     <StackLayout class="home-panel">
-        <TextField [(ngModel)]="task.title" hint="Введите заголовок..." autocorrect="true"></TextField>
-        <GridLayout columns="auto,100" rows="auto,auto" horizontalAlignment="left" verticalAlignment="top" с>
+        <TextField [(ngModel)]="task.title" hint="Введите заголовок..." autocorrect="true" lineHiehgt="50" height="50"
+            class="task-name"></TextField>
+        <GridLayout columns="auto,100" rows="auto,auto" horizontalAlignment="left" verticalAlignment="top"
+            style="padding-left: 50px; " class="switch-grid">
             <Label text="Повторять" col="0" row="0"></Label>
-            <Switch checked="true"  col="1" row="0"></Switch> 
+            <Switch [(ngModel)]="task.isPeriodic" checked="false" col="1" row="0" style="float:right;"></Switch>
         </GridLayout>
-        <RadCalendar></RadCalendar>   
+
+        <StackLayout>
+            <TextField [hint]="date" [(ngModel)]="task.start" id="date" (tap)="onDateTap($event,$args)"
+                editable="false"></TextField>
+            <TextField [hint]="time" [(ngModel)]="task.start" id="date" (tap)="onTimeTap($event,$args)"
+                editable="false"></TextField>
+        </StackLayout>
         <Button text="Сохранить" class="btn btn-primary" (tap)="onCreateButtonClick($event)"></Button>
     </StackLayout>
 

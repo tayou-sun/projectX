@@ -4,3 +4,17 @@
     font-size: 20;
     margin: 15;
 }
+
+.switch-grid{
+    vertical-align: center; 
+}
+
+.task-name{
+    font-size: 18px;
+
+}
+
+TextField{
+    border-bottom-width: 1
+    border-bottom-color: transparent;
+}

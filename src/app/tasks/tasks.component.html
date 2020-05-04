@@ -8,10 +8,11 @@
                     <FlexboxLayout flexDirection="row">
                         <!-- <Image [src]="country.imageSrc" class="thumb img-circle"></Image> -->
                         <CheckBox text="CheckBox Label" checked="true"></CheckBox>
-                        <Label [text]="country.title" class="t-12 task-text" verticalAlignment="center" style="width: 60%">
-                        </Label>
-                        <Label [text]= "country.start" class="date" verticalAlignment="center" style=""> </Label>
-
+                        <StackLayout>
+                            <Label [text]="country.title" class="t-12 task-text" verticalAlignment="center" style="width: 100%">
+                            </Label>
+                            <Label [text]= 'country.start | date: "dd.MM.yyyy hh:mm"' class="date" verticalAlignment="center" style=""> </Label>
+                        </StackLayout>
                     </FlexboxLayout>
                 </ng-template>
                 
