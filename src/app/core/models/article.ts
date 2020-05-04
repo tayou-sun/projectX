@@ -6,5 +6,5 @@ export class Article {
     public imgUrl?: string;
     public articleUrl?: string;
     public isFavorite?: boolean;
-
+    public problemArticles?: Article[];
 }

@@ -2,9 +2,9 @@ import { DayBookComponent } from "./day-book.component";
 import { NgModule } from "@angular/core";
 import { DayBookRoutingModule } from "./day-book-routing.module";
 import { SharedModule } from "~/app/shared/shared.module";
-import { PollListComponent } from './poll-list/poll-list.component';
-import { DayBookDataService } from "./day-book.data.service";
-import { DayBookResolver } from "./day-book-resolver.service";
+import { PollListComponent } from './components/poll-list/poll-list.component';
+import { DayBookDataService } from "./services/day-book.data.service";
+import { DayBookResolver } from "./services/day-book-resolver.service";
 import { CommonModule } from "@angular/common";
 import { CoreModule } from "~/app/core/core.module";
 import { NativeScriptCommonModule } from "nativescript-angular";
@@ -13,6 +13,8 @@ import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angul
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular/listview-directives";
 import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular/gauges-directives";
 import { NativeScriptUICalendarModule } from "nativescript-ui-calendar/angular/calendar-directives";
+import { ProfileDataService } from "./services/profile.data.service";
+import { ProfileComponent } from "./components/profile/profile.component";
 
 @NgModule({
 
@@ -21,16 +23,17 @@ import { NativeScriptUICalendarModule } from "nativescript-ui-calendar/angular/c
         SharedModule,
         CommonModule,
         CoreModule,
-        NativeScriptCommonModule
-        
+        NativeScriptCommonModule        
     ],
 
     declarations: [
         DayBookComponent,
-        PollListComponent
+        PollListComponent,
+        ProfileComponent
     ],
     providers: [
         DayBookDataService,
+        ProfileDataService,
         DayBookResolver
     ]
 

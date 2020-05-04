@@ -1,0 +1,16 @@
+
+.btn{
+    font-size: 15;
+    background: rgb(93, 203, 240);
+    color: white;
+    border-radius: 20px;
+    padding: 10;
+    text-align: center;
+    horizontal-align: center;
+}
+
+.poll-title__color_basic{
+    font-size: 17px;
+    margin-left: 10;
+   
+}

@@ -1,7 +1,13 @@
+import { Problem } from "./problem";
+import { ProfileQuestion } from "./profile-question";
+
 export class Poll {
     problemId?: number;
-    problem?: string;
+  
     id?: number;
     title?: string;
-    periodInDays?: number
+    periodInDays?: number;
+    problem?: Problem;
+    pollQuestionItems?: ProfileQuestion[];
+    
   }
