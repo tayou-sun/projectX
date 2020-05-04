@@ -184,14 +184,18 @@ html {
 }
 
 .add-button {
-    background-color: #8f91de;
+    /* background-color: #8f91de; */
     width: 70;
-    height: 70;
-    font-size: 50;
-    padding: 0 0 8;
-    border-radius: 50%;
-    color: #fff;
+    height: 50;
+    font-size: 35;
+    /* padding: 0 0 8; */
+    border-radius: 20%;
+    /* color: #fff; */
     margin-right: 15;
+    justify-content: center;
+    float: right;
+    margin-left: 5;
+    background-color:  #8f91de;
 }
 
 .owe-list-filter {

@@ -36,8 +36,9 @@ export class CalendarComponent implements OnInit {
     }
 
     public onEmailSend(event): void {
-        console.log("-----------------------------");
-        this.router.navigateByUrl("/eventcreate");
+        console.log("------------Navigate to create task-----------------");
+        this.router.navigateByUrl("/tasks-create");
+        // this.router.navigate(["tasks-create"],{ clearHistory: true } );
 
     }
 
