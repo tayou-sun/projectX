@@ -25,6 +25,11 @@ export class AppComponent {
     chooseCity(event){
         this.router.navigate(["calendar"], { clearHistory: true });
     }
+
+    chooseTasks(event){
+        this.router.navigateByUrl("/tasks");
+        console.log('task clicked');
+    }
     
     openArticles(event){
         this.router.navigate(["articles"], { clearHistory: true });  

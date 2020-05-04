@@ -10,6 +10,10 @@ import { EventCreateComponent } from './event-create/event-create.component';
 import { NativeScriptDateTimePickerModule } from "nativescript-datetimepicker/angular";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProblemSearchComponent } from './problem-search/problem-search.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { TasksService } from "./services/tasks.service";
+import { TaskCreateComponent } from './task-create/task-create.component';
+
 import { ArticlesComponent } from './articles/articles.component';
 import { ArticlesDataService } from "./services/article.data.service";
 import { HttpClientModule } from "@angular/common/http";
@@ -40,12 +44,16 @@ import { HomeModule } from "./home/home.module";
     declarations: [
         AppComponent,
         CalendarComponent,
+        EventCreateComponent,
+        TasksComponent,
+        TaskCreateComponent,
         EventCreateComponent
-        
-        
+
+
     ],
     providers:[
         ArticlesDataService,
+        TasksService,
         ProblemsDataService
     ],
     schemas: [
