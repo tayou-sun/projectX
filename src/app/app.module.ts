@@ -17,6 +17,11 @@ import { CoreModule } from "./core/core.module";
 import { SharedModule } from "./shared/shared.module";
 import { DayBookComponent } from './components/day-book/day-book.component';
 import { DayBookModule } from "./components/day-book/day-book.module";
+import { ArticlesDataService } from "./core/services/article.data.service";
+import { TasksService } from "./core/services/tasks.service";
+import { ProblemsDataService } from "./core/services/problem.data.service";
+import { FavouriteComponent } from './components/favourite/favourite.component';
+import { TaskCalendarService } from "./services/task-calendar.service";
 
 @NgModule({
     bootstrap: [
@@ -41,6 +46,13 @@ import { DayBookModule } from "./components/day-book/day-book.module";
         AppComponent,
         CalendarComponent,
         ProblemsComponent
+        
+    ],
+    providers:[
+        ArticlesDataService,
+        TasksService,
+        ProblemsDataService,
+        TaskCalendarService
     ],
 
     schemas: [

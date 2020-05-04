@@ -62,5 +62,6 @@ onItemTap(args: ItemEventData): void {
   fabTap() : void {
     console.log('fab tab');
     this.router.navigate(["tasks-create"],{ clearHistory: true } );
+      //  this.router.navigateByUrl("tasks-create");
   }
 }

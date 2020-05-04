@@ -9,18 +9,23 @@
     <StackLayout class="home-panel">
         <TextField [(ngModel)]="task.title" hint="Введите заголовок..." autocorrect="true" lineHiehgt="50" height="50"
             class="task-name"></TextField>
-        <GridLayout columns="auto,100" rows="auto,auto" horizontalAlignment="left" verticalAlignment="top"
+        <!-- <GridLayout columns="auto,100" rows="auto,auto" horizontalAlignment="left" verticalAlignment="top"
             style="padding-left: 50px; " class="switch-grid">
             <Label text="Повторять" col="0" row="0"></Label>
-            <Switch [(ngModel)]="task.isPeriodic" checked="false" col="1" row="0" style="float:right;"></Switch>
-        </GridLayout>
+            <Switch [(ngModel)]="task.isPeriodic" checked="false" col="1" row="0" style="float:right;margin-left: 55;" backgroundColor="red"></Switch>
+        </GridLayout> -->
+
+        <DockLayout style="vertical-align: center; "> 
+            <Label text="Повторять" col="0" row="0" style="margin-left: 20;"></Label>
+            <Switch [(ngModel)]="task.isPeriodic" checked="false" col="1" row="0" style="float:right;margin-left: 55;"></Switch>
+        </DockLayout>
 
         
 <!-- <DateTimePickerFields hintDate="select date" hintTime="select time"></DateTimePickerFields> -->
 
         <StackLayout>
             <DatePickerField hint="Выберите дату" height="50" style="font-size: 18px;" [date]="currentDate" [(ngModel)] = "selectedDate"></DatePickerField>
-            <TimePickerField hint="Выберите время" [(ngModel)] = "selectedTime" style="font-size: 18px;" [time]="selectedDate"></TimePickerField>
+            <TimePickerField hint="Выберите время" [(ngModel)] = "selectedTime" style="font-size: 18px;" [time]="currentTime"></TimePickerField>
             <!-- <TextField [hint]="date" [(ngModel)]="task.start" id="date" (tap)="onDateTap($event,$args)"
                 editable="false"></TextField>
             <TextField [hint]="time" [(ngModel)]="task.start" id="date" (tap)="onTimeTap($event,$args)"

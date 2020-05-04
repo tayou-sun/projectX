@@ -21,15 +21,20 @@ export class TaskCreateComponent implements OnInit {
   task: TaskCreateModel = new TaskCreateModel();
   date: string = "" ;
   time: string = "" ;
-  currentDate: Date = new Date();
-  selectedDate: Date = new Date();
-  selectedTime: Time ;
+  public currentDate: Date = new Date();
+  public currentTime: Date = new Date();
+  public selectedDate: Date = new Date();
+  public selectedTime: Date = new Date();
 
   constructor(public taskSevices: TasksService, public router: RouterExtensions) {
+    
    }
 
   ngOnInit(): void {
     console.log('current date' + this.currentDate);
+    this.selectedTime = new Date();
+    // this.selectedTime.hours = this.currentDate.getHours();
+    // this.selectedTime.hours = this.currentDate.getMinutes();
   }
 
   onDateTap(event, args: EventData): void {
@@ -89,15 +94,21 @@ export class TaskCreateComponent implements OnInit {
     console.log(this.selectedTime);
     console.log(this.selectedDate);
     // this.task.IsPeriodic = false;
-    this.task.Start = new Date("2020-05-04T12:30:00");
     
     this.taskSevices.create(this.task).subscribe((x: any) => {
-      if(this.date != null){
+      console.log('Time '+this.time);
+
+      if(this.selectedDate != null){
         this.task.Start = new Date(this.selectedDate);
-        this.task.Start.setHours(this.selectedTime.hours);
-        this.task.Start.setMinutes(this.selectedTime.minutes);
-        console.log(this.date);
-        console.log('date');
+        this.task.Start.setHours(this.selectedTime.getHours());
+        this.task.Start.setMinutes(this.selectedTime.getMinutes());
+
+        // this.task.Start.setTime(this.selectedTime.);
+        console.log('------Selected date ' +this.selectedDate);
+        console.log('------Selected time' + this.selectedTime);
+      }else{
+        this.task.Start = new Date();
+        console.log('Selected date is null' +this.selectedDate);
       }
       console.log("created task");
       console.log(JSON.stringify(x));

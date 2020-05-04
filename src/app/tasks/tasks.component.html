@@ -1,9 +1,7 @@
 <ns-navbar title="Задачи" needActionItem="true"></ns-navbar>
 
-<GridLayout rows="30,*">
-    <Label  horizontalAlignment="center" [text]="currentDate" class="t-12 task-text" verticalAlignment="center">
-    </Label>
-    <GridLayout row="1" class="home-panel"> 
+<GridLayout rows="*,auto">
+   
         <ListView [items]="tasks" (itemTap)="onItemTap($event)">
             <ng-template let-country="item">
                 <FlexboxLayout flexDirection="row">
@@ -19,8 +17,8 @@
             </ng-template>
 
         </ListView>
-    </GridLayout>
-    <Button (tap)="fabTap()" row="1" text="&#xf067;" class="fas fab-button">
+   
+    <Button   (tap)="fabTap()" row="1" text="&#xf067;" class="fas fab-button">
     </Button>
 
 
