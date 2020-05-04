@@ -24,6 +24,8 @@ import { ProblemPickerComponent } from './components/problem-picker/problem-pick
 import { ProblemsDataService } from "./services/problem.data.service";
 import { HomeModule } from "./home/home.module";
 import { FavouriteComponent } from './components/favourite/favourite.component';
+import { ProblemsComponent } from './components/problems/problems.component';
+import { CoreModule } from "./core/core.module";
 
 @NgModule({
     bootstrap: [
@@ -40,17 +42,15 @@ import { FavouriteComponent } from './components/favourite/favourite.component';
         NgShadowModule,
         NativeScriptPickerModule,
         HomeModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        CoreModule
     ],
     declarations: [
         AppComponent,
-        CalendarComponent
+        CalendarComponent,
+        ProblemsComponent
     ],
-    providers:[
-        ArticlesDataService,
-        TasksService,
-        ProblemsDataService
-    ],
+
     schemas: [
         NO_ERRORS_SCHEMA
     ]

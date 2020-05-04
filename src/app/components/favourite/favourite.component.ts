@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ArticlesDataService } from '~/app/services/article.data.service';
-import { Article } from '~/models/Article';
+import { Article } from '~/app/core/models/article';
 
 @Component({
   selector: 'ns-favourite',

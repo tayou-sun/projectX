@@ -6,8 +6,8 @@ import { SearchBar } from "tns-core-modules/ui/search-bar";
 import { ObservableArray } from "tns-core-modules/data/observable-array";
 import { isAndroid } from "tns-core-modules/platform";
 import { Color } from "tns-core-modules/color";
-import { Problem } from '~/models/problem';
 import { ProblemsDataService } from '../services/problem.data.service';
+import { Problem } from '../core/models/problem';
 
 class DataItem {
 	constructor(public name: string) {

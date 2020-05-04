@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
 import { ProblemsDataService } from '../../services/problem.data.service';
-import { Problem } from '~/models/problem';
 import { ProblemSearchComponent } from '~/app/problem-search/problem-search.component';
 import { ModalDialogOptions, ModalDialogService, RouterExtensions } from 'nativescript-angular';
 import { Page } from 'tns-core-modules/ui/page/page';
@@ -20,6 +19,7 @@ import * as app from "tns-core-modules/application";
 
 import { Router } from '@angular/router';
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
+import { Problem } from '~/app/core/models/problem';
 @Component({
   selector: 'ns-problem-picker',
   templateUrl: './problem-picker.component.html',

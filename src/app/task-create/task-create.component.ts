@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { TasksService } from '../services/tasks.service';
 import { Router } from '@angular/router';
-import { Task } from '../models/task.model';
+import { Task } from '../core/models/task.model';
 import { TmplAstElement } from '@angular/compiler';
-import { TaskCreateModel } from '../models/task-create.model';
+import { TaskCreateModel } from '../core/models/task-create.model';
 import * as ModalPicker from 'nativescript-modal-datetimepicker';
 import { getViewById, EventData } from 'tns-core-modules/ui/page/page';
 import { TextField } from 'tns-core-modules/ui/text-field';
