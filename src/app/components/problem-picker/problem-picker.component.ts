@@ -41,7 +41,6 @@ export class ProblemPickerComponent implements OnInit {
   problems: Problem[] = [];
 
   ngOnInit(): void {
-    this.page.actionBarHidden = false;
     /*  this.dataService.get().subscribe((problems: Problem[])=>{
        console.log(this.problems)
        this.problems = problems;
@@ -55,7 +54,6 @@ export class ProblemPickerComponent implements OnInit {
     sideDrawer.showDrawer();
   }
   public onOpenSearchAirportTap(isFrom: boolean): void {
-    console.log("!!!!!!!!!!!!!!!!!!!!!!!!!!")
     const options: ModalDialogOptions = {
       viewContainerRef: this._vcRef,
       context: { isFrom },

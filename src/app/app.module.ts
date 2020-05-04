@@ -34,15 +34,14 @@ import { HomeModule } from "./home/home.module";
         HttpClientModule,
         NgShadowModule,
         NativeScriptPickerModule,
-        HomeModule
+        HomeModule,
+        FontAwesomeModule
     ],
     declarations: [
         AppComponent,
         CalendarComponent,
-        EventCreateComponent,
-        ProblemSearchComponent,
-        UserComponent,
-        ProblemPickerComponent
+        EventCreateComponent
+        
         
     ],
     providers:[

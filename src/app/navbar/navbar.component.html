@@ -1,7 +1,7 @@
 <ActionBar [title]="title" class="action-bar" flat="true">
-    <ActionItem>
+    <ActionItem *ngIf="needActionItem">
         <StackLayout>
-            <Button class="fa" text="&#xf0c9;" fontSize="20" (tap)="onDrawerButtonTap()"></Button>
+            <Button class="fas" style="margin-top: 10px" text="&#xf013;" text="&#xf0c9;" fontSize="20" (tap)="onDrawerButtonTap()"></Button>
         </StackLayout>
     </ActionItem>
 </ActionBar>
