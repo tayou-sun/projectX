@@ -8,6 +8,7 @@ import * as ModalPicker from 'nativescript-modal-datetimepicker';
 import { getViewById, EventData } from 'tns-core-modules/ui/page/page';
 import { TextField } from 'tns-core-modules/ui/text-field';
 import { StackLayout } from 'tns-core-modules/ui/layouts/stack-layout/stack-layout';
+import { Time } from '@angular/common';
 
 @Component({
   selector: 'ns-task-create',
@@ -17,14 +18,17 @@ import { StackLayout } from 'tns-core-modules/ui/layouts/stack-layout/stack-layo
 export class TaskCreateComponent implements OnInit {
 
   task: TaskCreateModel = new TaskCreateModel();
-  date: string = "Выберите дату";
-  time: string = "Выберите время";
+  date: string = "" ;
+  time: string = "" ;
+  currentDate: Date = new Date();
+  selectedDate: Date = new Date();
+  selectedTime: Time ;
 
   constructor(public taskSevices: TasksService, public router: Router) {
    }
 
   ngOnInit(): void {
-
+    console.log('current date' + this.currentDate);
   }
 
   onDateTap(event, args: EventData): void {
@@ -38,8 +42,7 @@ export class TaskCreateComponent implements OnInit {
     }).then((result) => {
       // this.birthday = result['year'] + '-' + result['month'] + '-' + result['day'];
       this.task.Start = new Date(result['year'] + '-' + result['month'] + '-' + result['day']);
-      this.date = this.task.Start.toLocaleDateString()
-      ;
+      this.date = this.task.Start.toLocaleDateString();
       
       (<TextField>event).text = this.task.Start.toString();
       (<TextField>event).hint = this.task.Start.toString();
@@ -74,15 +77,27 @@ export class TaskCreateComponent implements OnInit {
       });
   }
 
+  onDateChange(event): void{
+    // let datepicker field = event;
+    console.log(typeof(event));
+  }
+
   onCreateButtonClick(event): void {
 
     console.log('tap create task');
-
+    console.log(this.selectedTime);
+    console.log(this.selectedDate);
     // this.task.IsPeriodic = false;
     this.task.Start = new Date("2020-05-04T12:30:00");
-    // this.task.Title  = "Выдать лекарство";
-
+    
     this.taskSevices.create(this.task).subscribe((x: any) => {
+      if(this.date != null){
+        this.task.Start = new Date(this.selectedDate);
+        this.task.Start.setHours(this.selectedTime.hours);
+        this.task.Start.setMinutes(this.selectedTime.minutes);
+        console.log(this.date);
+        console.log('date');
+      }
       console.log("created task");
       console.log(JSON.stringify(x));
       this.router.navigateByUrl("/tasks");

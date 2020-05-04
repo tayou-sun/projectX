@@ -17,8 +17,9 @@
                 </ng-template>
                 
             </ListView>
-            <FAB (tap)="fabTap()" row="1"  icon="~/images/ic_add_white_3x.png" rippleColor="#f1f1f1" class="fab-button">          
-            </FAB>
+            <!-- <FAB (tap)="fabTap()" row="1"  icon="~/images/ic_add_white_3x.png" rippleColor="#f1f1f1" class="fab-button">          
+            </FAB> -->
+            <Button text="+" tap="onTap" backgroundColor="#f1f1f1"  class="fab-button" (tap)="fabTap()"></Button>
         </StackLayout>
         
     </ScrollView>
