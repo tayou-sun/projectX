@@ -24,6 +24,7 @@ import { ProblemPickerComponent } from './components/problem-picker/problem-pick
 import { ProblemsDataService } from "./services/problem.data.service";
 import { HomeModule } from "./home/home.module";
 import { FavouriteComponent } from './components/favourite/favourite.component';
+import { TaskCalendarService } from "./services/task-calendar.service";
 
 @NgModule({
     bootstrap: [
@@ -49,7 +50,8 @@ import { FavouriteComponent } from './components/favourite/favourite.component';
     providers:[
         ArticlesDataService,
         TasksService,
-        ProblemsDataService
+        ProblemsDataService,
+        TaskCalendarService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

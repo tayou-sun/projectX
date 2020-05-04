@@ -20,7 +20,7 @@
 
         <StackLayout>
             <DatePickerField hint="Выберите дату" height="50" style="font-size: 18px;" [date]="currentDate" [(ngModel)] = "selectedDate"></DatePickerField>
-            <TimePickerField hint="Выберите время" [(ngModel)] = "selectedTime" style="font-size: 18px;" [time]="selectedDate"></TimePickerField>
+            <TimePickerField hint="Выберите время" [(ngModel)] = "selectedTime" style="font-size: 18px;" [time]="currentTime"></TimePickerField>
             <!-- <TextField [hint]="date" [(ngModel)]="task.start" id="date" (tap)="onDateTap($event,$args)"
                 editable="false"></TextField>
             <TextField [hint]="time" [(ngModel)]="task.start" id="date" (tap)="onTimeTap($event,$args)"
