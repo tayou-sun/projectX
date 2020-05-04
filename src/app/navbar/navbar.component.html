@@ -1,12 +1,9 @@
-<GridLayout rows="44, *">
-    <GridLayout row="0" columns="auto, *" backgroundColor="#48b1ec">
-        <Label col="0" text="Меню" class="fa menu-icon" (tap)="onDrawerButtonTap($event)">  <fa-icon [icon]="faBars"></fa-icon></Label>
-    </GridLayout>
-    <GridLayout row="1">
-        <Label class="page-icon fa" text="&#xf015;">
-            <fa-icon [icon]="faBars"></fa-icon>
-        </Label>
-        <!-- <Label class="page-placeholder" text="Page content goes here"></Label> -->
-      
-    </GridLayout>
-</GridLayout>
+<ActionBar [title]="title" class="action-bar" flat="true">
+    <ActionItem>
+        <StackLayout>
+            <Button class="fa" text="&#xf0c9;" fontSize="20" (tap)="onDrawerButtonTap()"></Button>
+        </StackLayout>
+    </ActionItem>
+</ActionBar>
+
+

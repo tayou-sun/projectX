@@ -3,7 +3,6 @@ import { NativeScriptModule } from "nativescript-angular/nativescript.module";
 
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
-import { NavbarComponent } from './navbar/navbar.component';
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { CalendarComponent } from './calendar/calendar.component';
@@ -12,9 +11,14 @@ import { NativeScriptDateTimePickerModule } from "nativescript-datetimepicker/an
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ProblemSearchComponent } from './problem-search/problem-search.component';
 import { ArticlesComponent } from './articles/articles.component';
-import { ArticlesDataService } from "./articles/article.data.service";
+import { ArticlesDataService } from "./services/article.data.service";
 import { HttpClientModule } from "@angular/common/http";
 import { NgShadowModule } from 'nativescript-ng-shadow';
+import { UserComponent } from './components/user/user.component';
+import { NativeScriptPickerModule } from "nativescript-picker/angular";
+import { ProblemPickerComponent } from './components/problem-picker/problem-picker.component';
+import { ProblemsDataService } from "./services/problem.data.service";
+import { HomeModule } from "./home/home.module";
 
 @NgModule({
     bootstrap: [
@@ -28,18 +32,22 @@ import { NgShadowModule } from 'nativescript-ng-shadow';
         NativeScriptDateTimePickerModule,
         FontAwesomeModule,
         HttpClientModule,
-        NgShadowModule
+        NgShadowModule,
+        NativeScriptPickerModule,
+        HomeModule
     ],
     declarations: [
         AppComponent,
         CalendarComponent,
         EventCreateComponent,
         ProblemSearchComponent,
-        ArticlesComponent,
+        UserComponent,
+        ProblemPickerComponent
         
     ],
     providers:[
-        ArticlesDataService
+        ArticlesDataService,
+        ProblemsDataService
     ],
     schemas: [
         NO_ERRORS_SCHEMA

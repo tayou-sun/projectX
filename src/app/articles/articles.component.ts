@@ -1,8 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticlesDataService } from './article.data.service';
+import { ArticlesDataService } from '../services/article.data.service';
 import { Article } from '~/models/Article';
 import { ShapeEnum, AndroidData } from 'nativescript-ng-shadow';
 import * as utilsModule from "tns-core-modules/utils/utils";
+import { Page } from 'tns-core-modules/ui/page/page';
+import * as app from "tns-core-modules/application";
+import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
+
 
 @Component({
   selector: 'ns-articles',
@@ -15,9 +19,15 @@ export class ArticlesComponent implements OnInit {
 
   public addFavourite(event){
     this.dataService.postFavourite(event).subscribe(_=>{
-
+      this.articles = [{title: "Fdfd"}];
     });
   }
+
+  onDrawerButtonTap(): void {
+    const sideDrawer = <RadSideDrawer>app.getRootView();
+    sideDrawer.showDrawer();
+
+}
 
   openLink(event){
     utilsModule.openUrl(event);
@@ -30,8 +40,10 @@ export class ArticlesComponent implements OnInit {
     shape: ShapeEnum.OVAL,
   };
   ngOnInit(): void {
+    console.log("articles articles articles articles articles articles")
     this.dataService.get().subscribe((x: Article[]) => {
         this.articles = x;
+        console.log( this.articles)
         
     },
       error => {

@@ -6,6 +6,8 @@ import { SearchBar } from "tns-core-modules/ui/search-bar";
 import { ObservableArray } from "tns-core-modules/data/observable-array";
 import { isAndroid } from "tns-core-modules/platform";
 import { Color } from "tns-core-modules/color";
+import { Problem } from '~/models/problem';
+import { ProblemsDataService } from '../services/problem.data.service';
 
 class DataItem {
 	constructor(public name: string) {
@@ -13,34 +15,35 @@ class DataItem {
 }
 
 @Component({
-  selector: 'ns-problem-search',
-  templateUrl: './problem-search.component.html',
-  styleUrls: ['./problem-search.component.css']
+	selector: 'ns-problem-search',
+	templateUrl: './problem-search.component.html',
+	styleUrls: ['./problem-search.component.css']
 })
 export class ProblemSearchComponent implements OnInit {
 
-  private _searchedText: string = '';
-	private arrayAirports: Array<DataItem> = [];
-	public airports: ObservableArray<DataItem> = new ObservableArray<DataItem>();
+	private _searchedText: string = '';
+	private arrayAirports: Array<Problem> = [];
+	public base_problems: Array<Problem> = new Array<Problem>();
+	public problems: Array<Problem> = new Array<Problem>();
 	public isFrom: boolean = false;
 
-	constructor(private _params: ModalDialogParams, private _page: Page, private router: RouterExtensions, private _activeRoute: ActivatedRoute) {
-		this.arrayAirports.push(new DataItem("1"));
-		this.arrayAirports.push(new DataItem("2"));
-		this.arrayAirports.push(new DataItem("3"));
-		this.arrayAirports.push(new DataItem("4"));
-		this.arrayAirports.push(new DataItem("5"));
-		this.arrayAirports.push(new DataItem("6"));
-		this.arrayAirports.push(new DataItem("7"));
-		this.arrayAirports.push(new DataItem("8"));
-		this.arrayAirports.push(new DataItem("7"));
+	constructor(private _params: ModalDialogParams, 
+		private _page: Page, 
+		private router: RouterExtensions,
+		 private _activeRoute: ActivatedRoute,
+		 private dataService: ProblemsDataService) {
 
-		this.airports = new ObservableArray<DataItem>(this.arrayAirports);
+
+
 
 		this.isFrom = this._params.context.isFrom;
 	}
 
 	ngOnInit() {
+		this.dataService.get().subscribe((problems: any)=>{
+			this.problems = problems
+			this.base_problems = problems;
+		})
 	}
 
 	onClose(): void {
@@ -48,10 +51,14 @@ export class ProblemSearchComponent implements OnInit {
 	}
 
 	onSelectItem(args) {
-		let airport = (this._searchedText !== "") ? this.airports.getItem(args.index) : this.arrayAirports[args.index];
+	
+		
+		let problem = (this._searchedText !== "") ? this.problems.find(x=>x.title.toUpperCase().includes(this._searchedText.toUpperCase())) :this.problems[args.index];
+		//let airport = (this._searchedText !== "") ? this.problems.getItem(args.index) : this.arrayAirports[args.index];
+		console.log("_______________________", problem)
 		this._params.closeCallback({
-			isFrom: this.isFrom,
-			airport
+			isFrom: true,
+			problem: problem
 		});
 	}
 
@@ -60,11 +67,11 @@ export class ProblemSearchComponent implements OnInit {
 		let searchValue = searchBar.text.toLowerCase();
 		this._searchedText = searchValue;
 
-		this.airports = new ObservableArray<DataItem>();
+		this.problems = new Array<Problem>();
 		if (searchValue !== "") {
-			for (let i = 0; i < this.arrayAirports.length; i++) {
-				if (this.arrayAirports[i].name.toLowerCase().indexOf(searchValue) !== -1) {
-					this.airports.push(this.arrayAirports[i]);
+			for (let i = 0; i < this.base_problems.length; i++) {
+				if (this.base_problems[i].title.toLowerCase().indexOf(searchValue) !== -1) {
+					this.problems.push(this.base_problems[i]);
 				}
 			}
 		}
@@ -84,11 +91,11 @@ export class ProblemSearchComponent implements OnInit {
 	public onClear(args) {
 		let searchBar = <SearchBar>args.object;
 		searchBar.text = "";
-		searchBar.hint = "Search for a airport";
+		searchBar.hint = "Найти проблему";
 
-		this.airports = new ObservableArray<DataItem>();
-		this.arrayAirports.forEach(item => {
-			this.airports.push(item);
+		this.problems = new Array<Problem>();
+		this.base_problems.forEach(item => {
+			this.problems.push(item);
 		});
 	}
 

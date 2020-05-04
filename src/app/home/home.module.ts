@@ -11,6 +11,8 @@ import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 import { NativeScriptUICalendarModule } from "nativescript-ui-calendar/angular";
 import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { UserComponent } from "../components/user/user.component";
+import { ArticlesComponent } from "../articles/articles.component";
 
 @NgModule({
     imports: [
@@ -26,7 +28,8 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
     ],
     declarations: [
         HomeComponent,
-        NavbarComponent
+        NavbarComponent,
+        ArticlesComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA
