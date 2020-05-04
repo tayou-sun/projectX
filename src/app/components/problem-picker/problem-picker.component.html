@@ -1,0 +1,44 @@
+<!-- <Button text="problem-picker works!" class="btn btn-primary"></Button> -->
+
+<!-- <ActionBar title="Выбор проблем" class="action-bar" flat="true">
+
+</ActionBar> -->
+<ns-navbar title="Выбор проблем" ></ns-navbar>
+
+<GridLayout class="page page-content home-page-content" rows="80, *, 40">
+    
+   <!--  columns="32,*,32,24,*,32,32" -->
+    <GridLayout row = "0"
+    class="body scf-card animate-bounceInLeft-delay-0ms">
+    <!-- <Label row="0" col="1" colSpan="5" text="From" class="title-label"></Label>
+    <Label row="0" col="1" colSpan="5" [text]="fromAirport" (tap)="onOpenSearchAirportTap(true)"
+        class="scf-input"></Label>
+    <Image row="0" col="5" rowSpan="2" class="icon-next" src="~/images/baseline_navigate_next_black_48.png"
+        (tap)="onOpenSearchAirportTap(true)"></Image> -->
+
+        <Button text="Добавить" (tap)="onOpenSearchAirportTap(true)" class="btn btn-primary m-t-20"></Button>
+    </GridLayout >
+    
+
+    <GridLayout  row="1" rows="*,*,*" class="page page-content">
+        <ListView [items]="problems" (itemTap)="onConstructionSiteItemTap($event)" separatorColor="transparent">
+            <ng-template let-item="item">
+                <GridLayout rows="*,*,*" columns="auto, *, auto">
+
+
+
+                    <StackLayout col="1" verticalAlignment="center">
+                        <Label class="site-template-title" [text]="item ? item.title : 'no data'"></Label>
+                    </StackLayout>
+                    <StackLayout margin="0,16,0,42" row="1" colSpan="2" backgroundColor="lightGray" height="1">
+                    </StackLayout>
+                </GridLayout>
+            </ng-template>
+        </ListView>
+    </GridLayout >
+    
+    <GridLayout row="2">
+        <Button text="Сохранить" (tap)="saveUserInfo()" class="btn btn-primary m-t-20"></Button>
+
+    </GridLayout>
+    </GridLayout>

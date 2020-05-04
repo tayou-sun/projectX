@@ -11,6 +11,10 @@ import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 import { NativeScriptUICalendarModule } from "nativescript-ui-calendar/angular";
 import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
+import { UserComponent } from "../components/user/user.component";
+import { ArticlesComponent } from "../articles/articles.component";
+import { ProblemPickerComponent } from "../components/problem-picker/problem-picker.component";
+import { ProblemSearchComponent } from "../problem-search/problem-search.component";
 
 @NgModule({
     imports: [
@@ -26,7 +30,11 @@ import { NativeScriptFormsModule } from "nativescript-angular/forms";
     ],
     declarations: [
         HomeComponent,
-        NavbarComponent
+        NavbarComponent,
+        ArticlesComponent,
+        ProblemSearchComponent,
+        UserComponent,
+        ProblemPickerComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

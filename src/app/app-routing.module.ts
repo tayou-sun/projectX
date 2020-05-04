@@ -6,6 +6,8 @@ import { EventCreateComponent } from "./event-create/event-create.component";
 import { TasksComponent } from "./tasks/tasks.component";
 import { TaskCreateComponent } from "./task-create/task-create.component";
 import { ArticlesComponent } from "./articles/articles.component";
+import { UserComponent } from "./components/user/user.component";
+import { ProblemPickerComponent } from "./components/problem-picker/problem-picker.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -14,7 +16,11 @@ const routes: Routes = [
     { path: "eventcreate", component: EventCreateComponent },
     {path: "tasks", component: TasksComponent},
     {path: "tasks-create", component: TaskCreateComponent},
-    { path: "articles", component: ArticlesComponent }
+    { path: "articles", component: ArticlesComponent },
+    { path: "articles", component: ArticlesComponent },
+    { path: "user", component: UserComponent },
+    { path: "problems", component: ProblemPickerComponent },
+    { path: "*", redirectTo: "/home", pathMatch: "full" }
 ];
 
 @NgModule({

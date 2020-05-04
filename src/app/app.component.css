@@ -105,3 +105,20 @@
 .sidedrawer-item {
     font-size: 18px;
 }
+
+
+.sidedrawer-list-item {
+    color: black;
+    padding-left: 30;
+    font-size: 22;
+    font-weight: bold;
+    height: 80;
+}
+
+.sidedrawer-item {
+    vertical-align: center;
+}
+
+.sidedrawer-list-item-active {
+    background-color: #a6a450;
+}
