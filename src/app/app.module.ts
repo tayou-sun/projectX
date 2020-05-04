@@ -45,13 +45,11 @@ import { HomeModule } from "./home/home.module";
         AppComponent,
         CalendarComponent,
         EventCreateComponent,
-        ProblemSearchComponent,
         TasksComponent,
         TaskCreateComponent,
-        ArticlesComponent,
         EventCreateComponent
-        
-        
+
+
     ],
     providers:[
         ArticlesDataService,

@@ -38,7 +38,8 @@ export class TaskCreateComponent implements OnInit {
     }).then((result) => {
       // this.birthday = result['year'] + '-' + result['month'] + '-' + result['day'];
       this.task.Start = new Date(result['year'] + '-' + result['month'] + '-' + result['day']);
-      this.date = this.task.Start.toLocaleDateString();
+      this.date = this.task.Start.toLocaleDateString()
+      ;
       
       (<TextField>event).text = this.task.Start.toString();
       (<TextField>event).hint = this.task.Start.toString();
