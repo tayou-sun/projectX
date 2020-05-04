@@ -1,0 +1,124 @@
+.page {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.center {
+    horizontal-align: center;
+}
+
+.icon {
+    border-radius: 50;
+    font-size: 40;
+    width: 90;
+    color: white;
+}
+
+.icon-left {
+    margin-right: 10;
+    padding-left: 28;
+}
+
+.icon-middle {
+    padding-left: 28;
+}
+
+.icon-right {
+    margin-left: 10;
+    padding-left: 23;
+}
+
+.icon-text {
+    color: white;
+    font-family: "Varela", "varela-regular";
+}
+
+.icon-text-left {
+    padding-left: 30;
+}
+
+.icon-text-middle {
+    padding-left: 35;
+}
+
+.icon-text-right {
+    padding-left: 38;
+}
+
+.city-name {
+    font-size: 40;
+    margin-top: 60;
+    font-family: "Varela", "varela-regular";
+    color: white;
+    text-transform: uppercase;
+    min-width: 240;
+    text-align: center;
+}
+
+.state-name {
+    font-size: 24;
+    margin-top: 20;
+    font-family: "Varela", "varela-regular";
+    color: white;
+    text-transform: uppercase;
+    min-width: 240;
+    text-align: center;
+}
+
+.fa {
+    font-family: "Font Awesome 5 Free", "fa-regular-400", "fa-solid-900";
+}
+
+.fa-solid {
+    font-family: "Font Awesome 5 Free", "fa-solid-900";
+}
+
+.temp {
+    font-size: 50;
+    font-family: "Varela", "varela-regular";
+    color: white;
+}
+
+.weather {
+    font-size: 24;
+    color: white;
+    padding-left: 5;
+}
+
+.day {
+    color: white;
+    font-family: "Varela", "varela-regular";
+}
+
+.search {
+    width: 90%;
+    font-size: 14;
+    font-family: "Varela", "varela-regular";  
+}
+
+.forecast {
+    margin-top: 10;
+    margin-bottom: 10;
+}
+
+.sidedrawer-item {
+    font-size: 18px;
+}
+
+
+.sidedrawer-list-item {
+    color: black;
+    padding-left: 30;
+    font-size: 22;
+    font-weight: bold;
+    height: 80;
+}
+
+.sidedrawer-item {
+    vertical-align: center;
+}
+
+.sidedrawer-list-item-active {
+    background-color: #a6a450;
+}

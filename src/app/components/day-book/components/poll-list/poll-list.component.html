@@ -1,0 +1,17 @@
+<ListView [items]="polls" separatorColor="transparent" [itemTemplateSelector]="templateSelector">
+    <ng-template nsTemplateKey="post" let-item="item">
+
+        <GridLayout columns="3/4*, 1/4*">
+            <StackLayout col="0" row="0">
+                <Label class="poll-title__color_basic" [text]="item.title" textWrap="true"></Label>
+
+            </StackLayout>
+            <StackLayout col="1" row="1">
+                <Label col="1" class="btn fas fab-button" text="&#xf5a1;" textWrap="true"
+                    (tap)="onCreatrProfileClick(item.id)"></Label>
+            </StackLayout>
+            <StackLayout margin="0,16,0,42" row="2" colSpan="2" backgroundColor="lightGray" height="1"></StackLayout>
+        </GridLayout>
+    </ng-template>
+
+</ListView>

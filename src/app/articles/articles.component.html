@@ -8,9 +8,7 @@
                 <Label class="article-title" [text]="item.title" textWrap="true"></Label>
                 <Label class="article-description" [text]="item.description" textWrap="true"></Label>
 
-            </StackLayout>
-
-           
+            </StackLayout>    
 
             <DockLayout  top="5" row="2" col="1" columns="*,*" rows="2*,3*" verticalAlignment="center"   tretchLastChild="true">
                 <Button class="action-label favourite-label" row="0"  col="0" text="В ИЗБРАННОЕ" textWrap="true" (tap)="addFavourite(item.id)"></Button>

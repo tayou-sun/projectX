@@ -6,13 +6,9 @@ import { SearchBar } from "tns-core-modules/ui/search-bar";
 import { ObservableArray } from "tns-core-modules/data/observable-array";
 import { isAndroid } from "tns-core-modules/platform";
 import { Color } from "tns-core-modules/color";
-import { Problem } from '~/models/problem';
-import { ProblemsDataService } from '../services/problem.data.service';
+import { Problem } from '../core/models/problem';
+import { ProblemsDataService } from '../core/services/problem.data.service';
 
-class DataItem {
-	constructor(public name: string) {
-	}
-}
 
 @Component({
 	selector: 'ns-problem-search',
@@ -26,21 +22,16 @@ export class ProblemSearchComponent implements OnInit {
 	public base_problems: Array<Problem> = new Array<Problem>();
 	public problems: Array<Problem> = new Array<Problem>();
 	public isFrom: boolean = false;
-
-	constructor(private _params: ModalDialogParams, 
-		private _page: Page, 
+	constructor(private _params: ModalDialogParams,
+		private _page: Page,
 		private router: RouterExtensions,
-		 private _activeRoute: ActivatedRoute,
-		 private dataService: ProblemsDataService) {
-
-
-
-
-		this.isFrom = this._params.context.isFrom;
+		private _activeRoute: ActivatedRoute,
+		private dataService: ProblemsDataService) {
 	}
 
+
 	ngOnInit() {
-		this.dataService.get().subscribe((problems: any)=>{
+		this.dataService.get().subscribe((problems: any) => {
 			this.problems = problems
 			this.base_problems = problems;
 		})
@@ -51,9 +42,9 @@ export class ProblemSearchComponent implements OnInit {
 	}
 
 	onSelectItem(args) {
-	
-		
-		let problem = (this._searchedText !== "") ? this.problems.find(x=>x.title.toUpperCase().includes(this._searchedText.toUpperCase())) :this.problems[args.index];
+
+
+		let problem = (this._searchedText !== "") ? this.problems.find(x => x.title.toUpperCase().includes(this._searchedText.toUpperCase())) : this.problems[args.index];
 		//let airport = (this._searchedText !== "") ? this.problems.getItem(args.index) : this.arrayAirports[args.index];
 		console.log("_______________________", problem)
 		this._params.closeCallback({

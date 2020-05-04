@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { ArticlesDataService } from '../services/article.data.service';
-import { Article } from '~/models/Article';
 import { ShapeEnum, AndroidData } from 'nativescript-ng-shadow';
 import * as utilsModule from "tns-core-modules/utils/utils";
 import { Page } from 'tns-core-modules/ui/page/page';
 import * as app from "tns-core-modules/application";
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
+import { Article } from '../core/models/article';
+import { ArticlesDataService } from '../core/services/article.data.service';
 
-
+ 
 @Component({
   selector: 'ns-articles',
   templateUrl: './articles.component.html',
