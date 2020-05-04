@@ -39,6 +39,7 @@ export class CalendarComponent implements OnInit {
   }
 
   ngOnInit(): void {
+      console.log('init');
   }
 
   onDateSelected(args) {

@@ -25,15 +25,20 @@
 				<GridLayout  row="2" columns="auto, *" class="sidedrawer-list-item" >
 					<Label row="0" col="0" text="&#xf005;" class="fas"></Label>
 					<Label row="0" col="1" text="Избранное" class="m-l-20 sidedrawer-item"
-						(tap)="clearUser($event)"></Label>
+					></Label>
 				</GridLayout>
 
 				<GridLayout  row="2" columns="auto, *" class="sidedrawer-list-item" >
 					<Label row="0" col="0" text="&#xf51a;" class="fas"></Label>
 					<Label row="0" col="1" text="Очистить" class="m-l-20 sidedrawer-item"
 						(tap)="clearUser($event)"></Label>
+                </GridLayout>
+                
+                <GridLayout  row="3" columns="auto, *" class="sidedrawer-list-item">
+					<Label row="0" col="0" text="&#xf0ae;" class="fas"></Label>
+					<Label row="0" col="1" text="Задачи" class="m-l-20 sidedrawer-item" (tap)="chooseTasks($event)"></Label>
 				</GridLayout>
-
+                
 			</StackLayout>
 		</ScrollView>
 	</GridLayout>

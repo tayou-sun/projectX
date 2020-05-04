@@ -1,0 +1,27 @@
+<!-- <ActionBar title="Задачи">
+</ActionBar> -->
+<ns-navbar title="Задачи" needActionItem="true"></ns-navbar>
+
+<GridLayout  rows="auto, *">
+    <ScrollView >
+        <StackLayout class="home-panel">
+            <ListView [items]="tasks" (itemTap)="onItemTap($event)" style="height:1250px">
+                <ng-template let-country="item">
+                    <FlexboxLayout flexDirection="row">
+                        <!-- <Image [src]="country.imageSrc" class="thumb img-circle"></Image> -->
+                        <CheckBox text="CheckBox Label" checked="true"></CheckBox>
+                        <StackLayout>
+                            <Label [text]="country.title" class="t-12 task-text" verticalAlignment="center" style="width: 100%">
+                            </Label>
+                            <Label [text]= 'country.start | date: "dd.MM.yyyy hh:mm"' class="date" verticalAlignment="center" style=""> </Label>
+                        </StackLayout>
+                    </FlexboxLayout>
+                </ng-template>
+                
+            </ListView>
+            <Button (tap)="fabTap()" row="1"  icon="~/images/ic_add_white_3x.png"  text="&#xf067;"  class="fas fab-button">          
+            </Button>
+        </StackLayout>
+        
+    </ScrollView>
+</GridLayout>
