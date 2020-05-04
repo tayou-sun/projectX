@@ -9,6 +9,7 @@ import { getViewById, EventData } from 'tns-core-modules/ui/page/page';
 import { TextField } from 'tns-core-modules/ui/text-field';
 import { StackLayout } from 'tns-core-modules/ui/layouts/stack-layout/stack-layout';
 import { Time } from '@angular/common';
+import { RouterExtensions } from 'nativescript-angular';
 
 @Component({
   selector: 'ns-task-create',
@@ -24,7 +25,7 @@ export class TaskCreateComponent implements OnInit {
   selectedDate: Date = new Date();
   selectedTime: Time ;
 
-  constructor(public taskSevices: TasksService, public router: Router) {
+  constructor(public taskSevices: TasksService, public router: RouterExtensions) {
    }
 
   ngOnInit(): void {
@@ -100,7 +101,7 @@ export class TaskCreateComponent implements OnInit {
       }
       console.log("created task");
       console.log(JSON.stringify(x));
-      this.router.navigateByUrl("/tasks");
+      this.router.navigate(["tasks"],{ clearHistory: true } );
 
     });
   }

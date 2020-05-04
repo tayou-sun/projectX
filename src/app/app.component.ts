@@ -27,7 +27,7 @@ export class AppComponent {
     }
 
     chooseTasks(event){
-        this.router.navigateByUrl("/tasks");
+        this.router.navigate(["tasks"], { clearHistory: true });
         console.log('task clicked');
     }
     
@@ -39,6 +39,8 @@ export class AppComponent {
         this.router.navigate(["home"], { clearHistory: true });  
 
     }
-
+    favourite(event){
+        this.router.navigate(["favourite"], { clearHistory: true }); 
+    }
 
  }

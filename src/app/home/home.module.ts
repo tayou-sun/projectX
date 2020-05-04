@@ -15,6 +15,10 @@ import { UserComponent } from "../components/user/user.component";
 import { ArticlesComponent } from "../articles/articles.component";
 import { ProblemPickerComponent } from "../components/problem-picker/problem-picker.component";
 import { ProblemSearchComponent } from "../problem-search/problem-search.component";
+import { TasksComponent } from "../tasks/tasks.component";
+import { TaskCreateComponent } from "../task-create/task-create.component";
+import { EventCreateComponent } from "../event-create/event-create.component";
+import { FavouriteComponent } from "../components/favourite/favourite.component";
 
 @NgModule({
     imports: [
@@ -34,7 +38,11 @@ import { ProblemSearchComponent } from "../problem-search/problem-search.compone
         ArticlesComponent,
         ProblemSearchComponent,
         UserComponent,
-        ProblemPickerComponent
+        ProblemPickerComponent,
+        TasksComponent,
+        TaskCreateComponent,
+        EventCreateComponent,
+        FavouriteComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

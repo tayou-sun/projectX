@@ -1,5 +1,7 @@
-<ActionBar title="Задачи">
-</ActionBar>
+<!-- <ActionBar title="Задачи">
+</ActionBar> -->
+<ns-navbar title="Задачи" needActionItem="true"></ns-navbar>
+
 <GridLayout  rows="auto, *">
     <ScrollView >
         <StackLayout class="home-panel">
@@ -17,9 +19,8 @@
                 </ng-template>
                 
             </ListView>
-            <!-- <FAB (tap)="fabTap()" row="1"  icon="~/images/ic_add_white_3x.png" rippleColor="#f1f1f1" class="fab-button">          
-            </FAB> -->
-            <Button text="+" tap="onTap" backgroundColor="#f1f1f1"  class="fab-button" (tap)="fabTap()"></Button>
+            <Button (tap)="fabTap()" row="1"  icon="~/images/ic_add_white_3x.png"  text="&#xf067;"  class="fas fab-button">          
+            </Button>
         </StackLayout>
         
     </ScrollView>

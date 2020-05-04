@@ -6,6 +6,9 @@
     background-color: #ff4081;
     horizontal-align: right;
     vertical-align: bottom;
+    color: white;
+    font-size: 18px;
+    border-radius: 100px;
   }
 
 .home-panel{
