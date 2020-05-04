@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { ItemEventData } from "tns-core-modules/ui/list-view";
 import { registerElement } from 'nativescript-angular/element-registry';
-import { TasksService } from '../services/tasks.service';
 import { Task } from '../core/models/task.model';
 /* registerElement('Fab', () => require('nativescript-floatingactionbutton').Fab); */
 import { CheckBox } from 'nativescript-checkbox';
 import { Router } from '@angular/router';
 import { RouterExtensions } from 'nativescript-angular';
+import { TasksService } from '../core/services/tasks.service';
 
 @Component({
   selector: 'ns-tasks',

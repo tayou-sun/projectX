@@ -7,7 +7,7 @@ import { TasksComponent } from "./tasks/tasks.component";
 import { TaskCreateComponent } from "./task-create/task-create.component";
 import { ArticlesComponent } from "./articles/articles.component";
 import { UserComponent } from "./components/user/user.component";
-import { ProblemPickerComponent } from "./components/problem-picker/problem-picker.component";
+import { ProblemPickerComponent } from "./shared/problem-picker/problem-picker.component";
 import { FavouriteComponent } from "./components/favourite/favourite.component";
 
 const routes: Routes = [
@@ -23,7 +23,10 @@ const routes: Routes = [
     { path: "problems", component: ProblemPickerComponent },
     { path: "*", redirectTo: "/home", pathMatch: "full" },
     { path: "favourite", component: FavouriteComponent },
-    
+    {
+        path: 'day-book',
+        loadChildren: './components/day-book/day-book.module#DayBookModule'
+    }
 ];
 
 @NgModule({

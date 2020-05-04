@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { TasksService } from '../services/tasks.service';
 import { Router } from '@angular/router';
 import { Task } from '../core/models/task.model';
 import { TmplAstElement } from '@angular/compiler';
@@ -9,6 +8,7 @@ import { getViewById, EventData } from 'tns-core-modules/ui/page/page';
 import { TextField } from 'tns-core-modules/ui/text-field';
 import { StackLayout } from 'tns-core-modules/ui/layouts/stack-layout/stack-layout';
 import { RouterExtensions } from 'nativescript-angular';
+import { TasksService } from '../core/services/tasks.service';
 
 @Component({
   selector: 'ns-task-create',

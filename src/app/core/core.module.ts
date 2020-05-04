@@ -1,19 +1,26 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
-import { ArticlesDataService } from '../services/article.data.service';
-import { TasksService } from '../services/tasks.service';
-import { ProblemsDataService } from '../services/problem.data.service';
+import { ArticlesDataService } from './services/article.data.service';
+import { TasksService } from './services/tasks.service';
+import { ProblemsDataService } from './services/problem.data.service';
+import { HttpClientModule } from '@angular/common/http';
+import { NavbarListComponent } from './components/navbar-list/navbar-list.component';
+import { ApiService } from './services/api.service';
+
+
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HttpClientModule
   ],
   providers: [
     ArticlesDataService,
     TasksService,
-    ProblemsDataService
+    ProblemsDataService,
+    ApiService
   ],
-  declarations: []
+  declarations: [NavbarListComponent],
+  exports:[NavbarListComponent]
 })
 export class CoreModule { }
