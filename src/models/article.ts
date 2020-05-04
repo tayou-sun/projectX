@@ -5,4 +5,6 @@ export class Article {
     public description?: string;
     public imgUrl?: string;
     public articleUrl?: string;
+    public isFavorite?: boolean;
+
 }

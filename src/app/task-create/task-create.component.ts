@@ -8,6 +8,7 @@ import * as ModalPicker from 'nativescript-modal-datetimepicker';
 import { getViewById, EventData } from 'tns-core-modules/ui/page/page';
 import { TextField } from 'tns-core-modules/ui/text-field';
 import { StackLayout } from 'tns-core-modules/ui/layouts/stack-layout/stack-layout';
+import { RouterExtensions } from 'nativescript-angular';
 
 @Component({
   selector: 'ns-task-create',
@@ -20,7 +21,7 @@ export class TaskCreateComponent implements OnInit {
   date: string = "Выберите дату";
   time: string = "Выберите время";
 
-  constructor(public taskSevices: TasksService, public router: Router) {
+  constructor(public taskSevices: TasksService, public router: RouterExtensions) {
    }
 
   ngOnInit(): void {
@@ -85,7 +86,7 @@ export class TaskCreateComponent implements OnInit {
     this.taskSevices.create(this.task).subscribe((x: any) => {
       console.log("created task");
       console.log(JSON.stringify(x));
-      this.router.navigateByUrl("/tasks");
+      this.router.navigate(["tasks"],{ clearHistory: true } );
 
     });
   }

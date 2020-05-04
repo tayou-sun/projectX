@@ -6,6 +6,7 @@ import { Task } from '../models/task.model';
 /* registerElement('Fab', () => require('nativescript-floatingactionbutton').Fab); */
 import { CheckBox } from 'nativescript-checkbox';
 import { Router } from '@angular/router';
+import { RouterExtensions } from 'nativescript-angular';
 
 @Component({
   selector: 'ns-tasks',
@@ -40,7 +41,7 @@ onItemTap(args: ItemEventData): void {
     console.log('Item with index: ' + args.index + ' tapped');
 }
 
-  constructor(public taskSevices: TasksService, public router: Router) {
+  constructor(public taskSevices: TasksService, public router: RouterExtensions) {
     this.taskService = taskSevices;
    }
 
@@ -65,6 +66,6 @@ onItemTap(args: ItemEventData): void {
 
   fabTap() : void {
     console.log('fab tab');
-    this.router.navigateByUrl("/tasks-create");
+    this.router.navigate(["tasks-create"],{ clearHistory: true } );
   }
 }

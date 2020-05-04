@@ -18,6 +18,7 @@ import { ProblemSearchComponent } from "../problem-search/problem-search.compone
 import { TasksComponent } from "../tasks/tasks.component";
 import { TaskCreateComponent } from "../task-create/task-create.component";
 import { EventCreateComponent } from "../event-create/event-create.component";
+import { FavouriteComponent } from "../components/favourite/favourite.component";
 
 @NgModule({
     imports: [
@@ -40,7 +41,8 @@ import { EventCreateComponent } from "../event-create/event-create.component";
         ProblemPickerComponent,
         TasksComponent,
         TaskCreateComponent,
-        EventCreateComponent
+        EventCreateComponent,
+        FavouriteComponent
     ],
     schemas: [
         NO_ERRORS_SCHEMA

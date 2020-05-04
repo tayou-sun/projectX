@@ -23,6 +23,7 @@ import { NativeScriptPickerModule } from "nativescript-picker/angular";
 import { ProblemPickerComponent } from './components/problem-picker/problem-picker.component';
 import { ProblemsDataService } from "./services/problem.data.service";
 import { HomeModule } from "./home/home.module";
+import { FavouriteComponent } from './components/favourite/favourite.component';
 
 @NgModule({
     bootstrap: [
@@ -44,8 +45,6 @@ import { HomeModule } from "./home/home.module";
     declarations: [
         AppComponent,
         CalendarComponent
-        
-
     ],
     providers:[
         ArticlesDataService,

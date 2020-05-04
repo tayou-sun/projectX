@@ -39,6 +39,8 @@ export class AppComponent {
         this.router.navigate(["home"], { clearHistory: true });  
 
     }
-
+    favourite(event){
+        this.router.navigate(["favourite"], { clearHistory: true }); 
+    }
 
  }
