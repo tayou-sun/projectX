@@ -59,19 +59,19 @@ export class CalendarComponent implements OnInit {
         for (let i = 0; i < this.calendarTask.length; i++) {
 
             console.log(JSON.stringify(this.calendarTask[i]));
-            console.log('start ' + this.calendarTask[i].start);
+            console.log('start   ' + this.calendarTask[i].start);
+            console.log('start time' + this.calendarTask[i].start.getTime());
             let now = new Date();
-              let startDate = new Date(now.getFullYear(), now.getMonth(), i * 2, 1);
-              let endDate = new Date(now.getFullYear(), now.getMonth(), (i * 2), 3);
-            // let startDate: Date = this.calendarTask[i].start;//new Date(this.calendarTask[i].start.getMilliseconds());
-            // let endDate: Date = (this.calendarTask[i].end == null ? this.calendarTask[i].start : this.calendarTask[i].end);
-            console.log(this.calendarTask[i].title);
-            let event = new calendarModule.CalendarEvent(this.calendarTask[i].title, startDate, startDate, false, colors[i * 10 % (colors.length - 1)]);
+            // let startDate = new Date(now.getFullYear(), now.getMonth(), i * 2, 1);
+            // let endDate = new Date(now.getFullYear(), now.getMonth(), (i * 2), 3);
+            let startDate: Date = this.calendarTask[i].start;//new Date(this.calendarTask[i].start.getMilliseconds());
+            let endDate: Date = (this.calendarTask[i].end == null ? this.calendarTask[i].start : this.calendarTask[i].end);
+            let event = new calendarModule.CalendarEvent(this.calendarTask[i].title,  startDate, startDate, false, colors[i * 10 % (colors.length - 1)]);
             events.push(event);
         }
         this.calendarEvents = events;
-
     }
+
 
     onDateSelected(args) {
         console.log("onDateSelected: " + args.date);
