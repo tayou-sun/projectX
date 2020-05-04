@@ -41,8 +41,6 @@ import { HomeModule } from "./home/home.module";
         AppComponent,
         CalendarComponent,
         EventCreateComponent
-        
-        
     ],
     providers:[
         ArticlesDataService,
