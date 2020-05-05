@@ -15,6 +15,7 @@ import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular/gauges-
 import { NativeScriptUICalendarModule } from "nativescript-ui-calendar/angular/calendar-directives";
 import { ProfileDataService } from "./services/profile.data.service";
 import { ProfileComponent } from "./components/profile/profile.component";
+import { PollsComponent } from "~/app/components/polls/polls.component";
 
 @NgModule({
 
@@ -29,12 +30,16 @@ import { ProfileComponent } from "./components/profile/profile.component";
     declarations: [
         DayBookComponent,
         PollListComponent,
-        ProfileComponent
+        ProfileComponent,
+        PollsComponent
     ],
     providers: [
         DayBookDataService,
         ProfileDataService,
         DayBookResolver
+    ],
+    exports:[
+
     ]
 
 })

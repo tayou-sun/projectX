@@ -27,7 +27,6 @@ export class NavbarListComponent {
 
   chooseTasks(event){
       this.router.navigate(["tasks"], { clearHistory: true });
-      console.log('task clicked');
   }
   
   openArticles(event){
@@ -38,12 +37,17 @@ export class NavbarListComponent {
       this.router.navigate(["home"], { clearHistory: true });  
 
   }
-  favourite(event){
-      this.router.navigate(["favourite"], { clearHistory: true }); 
+  favorite(event){
+      this.router.navigate(["favorite"], { clearHistory: true }); 
   }
 
   dayBookClick(event){
       this.router.navigate(["day-book"], { clearHistory: true }); 
   }
+
+  charts(event){
+    this.router.navigate(["charts"], { clearHistory: true }); 
+  }
+
 
 }

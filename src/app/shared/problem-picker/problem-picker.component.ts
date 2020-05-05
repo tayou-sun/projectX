@@ -1,22 +1,13 @@
 import { Component, OnInit, ViewContainerRef } from '@angular/core';
-import { ProblemSearchComponent } from '~/app/problem-search/problem-search.component';
+import { ProblemSearchComponent } from '~/app/components/problem-search/problem-search.component';
 import { ModalDialogOptions, ModalDialogService, RouterExtensions } from 'nativescript-angular';
 import { Page } from 'tns-core-modules/ui/page/page';
-import { GridLayout } from "tns-core-modules/ui/layouts/grid-layout";
 import {
-  getBoolean,
-  setBoolean,
-  getNumber,
-  setNumber,
-  getString,
-  setString,
-  hasKey,
-  remove,
-  clear
+  setString
+ 
 } from "tns-core-modules/application-settings";
 import * as app from "tns-core-modules/application";
 
-import { Router } from '@angular/router';
 import { RadSideDrawer } from 'nativescript-ui-sidedrawer';
 import { Problem } from '~/app/core/models/problem';
 import { ProblemsDataService } from '~/app/core/services/problem.data.service';
@@ -27,29 +18,21 @@ import { ProblemsDataService } from '~/app/core/services/problem.data.service';
   entryComponents: [ProblemSearchComponent]
 })
 export class ProblemPickerComponent implements OnInit {
-  private _overlayGridLayout: GridLayout;
 
   constructor(
-    private dataService: ProblemsDataService, 
+    private dataService: ProblemsDataService,
     private _modalService: ModalDialogService,
     private _vcRef: ViewContainerRef,
     private page: Page,
-  private router: RouterExtensions) {
-    this._overlayGridLayout = this.page.getViewById('overlayGridLayout')
+    private router: RouterExtensions) {
   }
 
   problems: Problem[] = [];
 
   ngOnInit(): void {
-    /*  this.dataService.get().subscribe((problems: Problem[])=>{
-       console.log(this.problems)
-       this.problems = problems;
-     }) */
   }
 
-  
-
-  onDrawerButtonTap(){
+  onDrawerButtonTap() {
     const sideDrawer = <RadSideDrawer>app.getRootView();
     sideDrawer.showDrawer();
   }
@@ -62,20 +45,12 @@ export class ProblemPickerComponent implements OnInit {
 
     this._modalService.showModal(ProblemSearchComponent, options)
       .then((result: any) => {
-
         this.problems.push(result.problem)
-
-        /* 	if (result.isFrom) {
-            this.fromAirport = result.airport.name;
-          } else {
-            this.toAirport = result.airport.name;
-          } */
       });
   }
 
-  public  saveUserInfo() {
+  public saveUserInfo() {
     setString("userId", "smth");
     this.router.navigate(['articles'], { clearHistory: true });
-    //this.router.navigateByUrl("/articles")
   }
 }

@@ -5,15 +5,8 @@ import { isIOS } from "tns-core-modules/platform";
 import { Page } from "tns-core-modules/ui/page/page";
 import * as app from "tns-core-modules/application";
 import {
-    getBoolean,
-    setBoolean,
-    getNumber,
-    setNumber,
     getString,
-    setString,
     hasKey,
-    remove,
-    clear
 } from "tns-core-modules/application-settings";
 import { Router } from "@angular/router";
 import { RouterExtensions } from "nativescript-angular";
@@ -25,22 +18,17 @@ import { RouterExtensions } from "nativescript-angular";
 
 export class HomeComponent implements OnInit {
 
-    constructor(private page: Page, private router: RouterExtensions) {}
+    constructor(private page: Page, private router: RouterExtensions) { }
 
     ngOnInit(): void {
         this.page.actionBarHidden = true;
         var hasUser = hasKey("userId");
-        console.log("))))))))))   ", getString("userId"))
-        if (!hasUser || getString("userId") == ""){
-           
-            this.router.navigate(["user"], { clearHistory: true });  
-        }
-        else {
+        if (!hasUser || getString("userId") == "") {
 
+            this.router.navigate(["user"], { clearHistory: true });
         }
+
     }
+}
 
-
-};
- 
 

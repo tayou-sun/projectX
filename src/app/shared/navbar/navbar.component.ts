@@ -10,6 +10,7 @@ import * as app from "tns-core-modules/application";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class NavbarComponent implements OnInit {
+  
   @Input() title: string;
   @Input() needActionItem: boolean;
 

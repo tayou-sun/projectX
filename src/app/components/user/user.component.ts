@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewContainerRef, ElementRef, ViewChild } from '@angular/core';
 import { ModalDialogService, ModalDialogOptions } from 'nativescript-angular';
 import { Page, Color } from 'tns-core-modules/ui/page/page';
-import { ProblemSearchComponent } from '~/app/problem-search/problem-search.component';
 import { action } from "tns-core-modules/ui/dialogs";
 import { Router } from '@angular/router';
 
@@ -23,7 +22,6 @@ export class UserComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
-    console.log("-------------------------------")
   }
 
   public typeOfService: string = '';
@@ -42,19 +40,5 @@ export class UserComponent implements OnInit {
   public getProblems(){
     this.router.navigateByUrl("/problems")
   }
-/* 
-  onOpenSearchAirportTap(isFrom: boolean): void {
-		const options: ModalDialogOptions = {
-			viewContainerRef: this._vcRef,
-			context: { isFrom },
-			fullscreen: true
-		};
-
-		this._modalService.showModal(ProblemSearchComponent, options)
-			.then((result: any) => {
-        debugger
-				var a = 1;
-			});
-	} */
 
 } 

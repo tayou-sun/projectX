@@ -10,25 +10,10 @@
             <GridLayout>
 
                 <GridLayout col="0" row="0">
-                    <!--  <Ripple rippleColor="#d50000"></Ripple> -->
-                    <Button col="1" class="h2" [text]="item.title" textWrap="true" (tap)="postResult(item.id, item.pollQuestionId)" [backgroundColor]="item.color"> 
+                    <Button col="1" class="h2" [text]="item.title" textWrap="true" (tap)="postResult(item.id, item.pollQuestionId)" [backgroundColor]="item.color">
                     </Button>
-
-                    <!--   </Ripple> -->
                 </GridLayout>
-
-
-
-
-
-
-
             </GridLayout>
-
-
-
         </ng-template>
-
     </ListView>
-
 </GridLayout>

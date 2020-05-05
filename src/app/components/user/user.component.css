@@ -1,5 +1,3 @@
-/* Add mobile styles for the component here.  */
-
 .body {
     background-color: #ffffff;
 }
@@ -41,10 +39,6 @@
 
 .input {
     margin: 30;
-    /*     border-bottom-color: grey;
- */
-    /*     background-color: grey;
- */
     font-size: 16px;
 }
 

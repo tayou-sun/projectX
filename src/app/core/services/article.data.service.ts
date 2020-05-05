@@ -12,7 +12,7 @@ export class ArticlesDataService {
         return this.http.get(this.url + "/Articles");
     }
 
-    postFavourite(id: number){
+    postFavorite(id: number){
         return this.http.post(this.url+"/FavoriteArticles", {id: id});
     }
 }

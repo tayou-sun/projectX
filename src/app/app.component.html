@@ -1,13 +1,14 @@
 <RadSideDrawer drawerTransition="PushTransition">
 
-	<GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
-		<ScrollView row="1">
-			<StackLayout class="sidedrawer-content">
-				<ns-navbar-list></ns-navbar-list>
-			</StackLayout>
-		</ScrollView>
-	</GridLayout>
+    <GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
+        <ScrollView row="1">
+            <StackLayout class="sidedrawer-content">
+                <StackLayout class="hr-light"></StackLayout>
+                <ns-navbar-list></ns-navbar-list>
+            </StackLayout>
+        </ScrollView>
+    </GridLayout>
 
-	<page-router-outlet tkMainContent></page-router-outlet>
+    <page-router-outlet tkMainContent></page-router-outlet>
 
 </RadSideDrawer>

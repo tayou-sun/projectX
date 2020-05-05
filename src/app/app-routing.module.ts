@@ -1,14 +1,16 @@
 import { NgModule } from "@angular/core";
 import { Routes } from "@angular/router";
 import { NativeScriptRouterModule } from "nativescript-angular/router";
-import { CalendarComponent } from "./calendar/calendar.component";
-import { EventCreateComponent } from "./event-create/event-create.component";
-import { TasksComponent } from "./tasks/tasks.component";
-import { TaskCreateComponent } from "./task-create/task-create.component";
-import { ArticlesComponent } from "./articles/articles.component";
+import { CalendarComponent } from "./components/calendar/calendar.component";
+import { EventCreateComponent } from "./components/event-create/event-create.component";
+import { TasksComponent } from "./components/tasks/tasks.component";
+import { TaskCreateComponent } from "./components/task-create/task-create.component";
+import { ArticlesComponent } from "./components/articles/articles.component";
 import { UserComponent } from "./components/user/user.component";
 import { ProblemPickerComponent } from "./shared/problem-picker/problem-picker.component";
-import { FavouriteComponent } from "./components/favourite/favourite.component";
+import { FavoriteComponent } from "./components/favorite/favorite.component";
+import { ChartsComponent } from "./components/charts/charts.component";
+import { PollsComponent } from "./components/polls/polls.component";
 import { DayBookComponent } from "./components/day-book/day-book.component";
 import { ProfileComponent } from "./components/day-book/components/profile/profile.component";
 
@@ -23,8 +25,11 @@ const routes: Routes = [
     { path: "articles", component: ArticlesComponent },
     { path: "user", component: UserComponent },
     { path: "problems", component: ProblemPickerComponent },
+    { path: "favorite", component: FavoriteComponent },
+    { path: "charts", component: ChartsComponent },
+    { path: "polls", component: PollsComponent },
     { path: "*", redirectTo: "/home", pathMatch: "full" },
-    { path: "favourite", component: FavouriteComponent },
+    
     {
         path: 'day-book',
         component: DayBookComponent

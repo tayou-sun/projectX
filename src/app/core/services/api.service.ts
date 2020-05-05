@@ -28,7 +28,6 @@ export class ApiService {
   }
 
   post(path: string, body: Object = {}): Observable<any> {
-    console.log("JSON.stringify(body)     !!!!!!!!!!!!!---------- ", JSON.stringify(body))
     return this.http.post(
       `${environment.apiUrl}${path}`,
       JSON.stringify(body),

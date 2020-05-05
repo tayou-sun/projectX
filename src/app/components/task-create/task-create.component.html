@@ -1,0 +1,21 @@
+<ns-navbar title="Добавить задачу" needActionItem="true"></ns-navbar>
+
+<GridLayout rows="auto, *">
+
+    <StackLayout class="home-panel">
+        <TextField [(ngModel)]="task.title" hint="Введите заголовок..." autocorrect="true" lineHiehgt="50" height="50" class="task-name"></TextField>
+
+        <DockLayout style="vertical-align: center; ">
+            <Label text="Повторять" col="0" row="0" style="margin-left: 20;"></Label>
+            <Switch [(ngModel)]="task.isPeriodic" checked="false" col="1" row="0" style="float:right;margin-left: 55;"></Switch>
+        </DockLayout>
+
+        <StackLayout>
+            <DatePickerField name="DatePickerField" ngDefaultControl hint="Выберите дату" height="50" style="font-size: 18px;" [(ngModel)]="selectedDate"></DatePickerField>
+            <TimePickerField name="TimePickerField" ngDefaultControl hint="Выберите время" [(ngModel)]="selectedTime" style="font-size: 18px;"></TimePickerField>
+
+        </StackLayout>
+        <Button text="Сохранить" class="btn btn-primary" (tap)="onCreateButtonClick($event)"></Button>
+    </StackLayout>
+
+</GridLayout>

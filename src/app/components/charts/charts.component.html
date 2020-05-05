@@ -1,0 +1,15 @@
+<ns-navbar [title]="pageTitle" needActionItem="true">
+</ns-navbar>
+
+<GridLayout rows="auto, *" style="height: 80%;">
+    <RadCartesianChart row="0" id="cartesianChart" style="height: 100%">
+        <CategoricalAxis tkCartesianHorizontalAxis labelSize="40" labelMargin="10"></CategoricalAxis>
+        <LinearAxis tkCartesianVerticalAxis verticalLocation="Bottom"></LinearAxis>
+
+        <BarSeries tkCartesianSeries paleteMode="Item" [items]="polls" categoryProperty='date' valueProperty="value" strokeColorProperty="color" verticalLocation="Bottom" seriesName="Bar">
+        </BarSeries>
+        <Palette tkCartesianPalette seriesName="Bar">
+            <PaletteEntry tkCartesianPaletteEntry></PaletteEntry>
+        </Palette>
+    </RadCartesianChart>
+</GridLayout>

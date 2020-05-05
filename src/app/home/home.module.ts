@@ -3,8 +3,6 @@ import { NativeScriptCommonModule } from "nativescript-angular/common";
 
 import { HomeRoutingModule } from "./home-routing.module";
 import { HomeComponent } from "./home.component";
-import { RouterExtensions } from "nativescript-angular/router";
-import { Page, EventData } from "tns-core-modules/ui/page/page";
 import { NavbarComponent } from "../shared/navbar/navbar.component";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular";
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
@@ -12,16 +10,17 @@ import { NativeScriptUICalendarModule } from "nativescript-ui-calendar/angular";
 import { NativeScriptUIGaugeModule } from "nativescript-ui-gauge/angular";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { UserComponent } from "../components/user/user.component";
-import { ArticlesComponent } from "../articles/articles.component";
-import { ProblemPickerComponent } from "../shared/problem-picker/problem-picker.component";
-import { ProblemSearchComponent } from "../problem-search/problem-search.component";
-import { TasksComponent } from "../tasks/tasks.component";
-import { TaskCreateComponent } from "../task-create/task-create.component";
-import { EventCreateComponent } from "../event-create/event-create.component";
-import { FavouriteComponent } from "../components/favourite/favourite.component";
+import { ArticlesComponent } from "../components/articles/articles.component";
+import { TasksComponent } from "../components/tasks/tasks.component";
+import { TaskCreateComponent } from "../components/task-create/task-create.component";
+import { EventCreateComponent } from "../components/event-create/event-create.component";
+import { FavoriteComponent } from "../components/favorite/favorite.component";
 import { SharedModule } from "../shared/shared.module";
 import { NativeScriptDateTimePickerModule } from "nativescript-datetimepicker/angular";
-import { CalendarComponent } from "../calendar/calendar.component";
+import { CalendarComponent } from "../components/calendar/calendar.component";
+import { ChartsComponent } from "../components/charts/charts.component";
+import { NativeScriptUIChartModule } from "nativescript-ui-chart/angular/chart-directives";
+import { PollsComponent } from "../components/polls/polls.component";
 
 @NgModule({
     imports: [
@@ -36,7 +35,8 @@ import { CalendarComponent } from "../calendar/calendar.component";
         NativeScriptFormsModule,
         SharedModule,
         NativeScriptCommonModule,
-        NativeScriptDateTimePickerModule
+        NativeScriptDateTimePickerModule,
+        NativeScriptUIChartModule,
     ],
     declarations: [
         HomeComponent,
@@ -45,8 +45,9 @@ import { CalendarComponent } from "../calendar/calendar.component";
         TasksComponent,
         TaskCreateComponent,
         EventCreateComponent,
-        FavouriteComponent,
-        CalendarComponent
+        FavoriteComponent,
+        CalendarComponent,
+        ChartsComponent
         
     ],
     schemas: [
