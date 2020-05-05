@@ -7,18 +7,20 @@ import { TasksComponent } from "./tasks/tasks.component";
 import { TaskCreateComponent } from "./task-create/task-create.component";
 import { ArticlesComponent } from "./articles/articles.component";
 import { UserComponent } from "./components/user/user.component";
-import { ProblemPickerComponent } from "./components/problem-picker/problem-picker.component";
+import { ProblemPickerComponent } from "./shared/problem-picker/problem-picker.component";
 import { FavouriteComponent } from "./components/favourite/favourite.component";
 import { ChartsComponent } from "./charts/charts.component";
 import { PollsComponent } from "./polls/polls.component";
+import { DayBookComponent } from "./components/day-book/day-book.component";
+import { ProfileComponent } from "./components/day-book/components/profile/profile.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },
     { path: "home", loadChildren: () => import("~/app/home/home.module").then((m) => m.HomeModule) },
     { path: "calendar", component: CalendarComponent },
     { path: "eventcreate", component: EventCreateComponent },
-    {path: "tasks", component: TasksComponent},
-    {path: "tasks-create", component: TaskCreateComponent},
+    { path: "tasks", component: TasksComponent },
+    { path: "tasks-create", component: TaskCreateComponent },
     { path: "articles", component: ArticlesComponent },
     { path: "articles", component: ArticlesComponent },
     { path: "user", component: UserComponent },
@@ -28,6 +30,14 @@ const routes: Routes = [
     { path: "charts", component: ChartsComponent },
     { path: "polls", component: PollsComponent },
     
+    {
+        path: 'day-book',
+        component: DayBookComponent
+    },
+    {
+        path: 'profile/:id',
+        component: ProfileComponent
+    }
 ];
 
 @NgModule({

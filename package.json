@@ -36,6 +36,7 @@
     "nativescript-picker": "^2.1.2",
     "nativescript-plugin-firebase": "^10.5.2",
     "nativescript-push-notifications": "^1.1.6",
+    "nativescript-ripple": "^2.2.1",
     "nativescript-ui-calendar": "^6.1.0",
     "nativescript-ui-chart": "^7.1.1",
     "nativescript-ui-gauge": "^6.0.0",

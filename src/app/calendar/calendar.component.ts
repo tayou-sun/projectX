@@ -3,7 +3,8 @@ import * as calendarModule from "nativescript-ui-calendar";
 import { Router } from '@angular/router';
 import { Color } from 'tns-core-modules/color/color';
 import { TaskCalendarService } from '../services/task-calendar.service';
-import { Task } from '../models/task.model';
+import { Task } from '../core/models/task.model';
+// import { Task } from '../models/task.model';
 
 @Component({
     selector: 'ns-calendar',
@@ -36,8 +37,9 @@ export class CalendarComponent implements OnInit {
     }
 
     public onEmailSend(event): void {
-        console.log("-----------------------------");
-        this.router.navigateByUrl("/eventcreate");
+        console.log("------------Navigate to create task-----------------");
+        this.router.navigateByUrl("/tasks-create");
+        // this.router.navigate(["tasks-create"],{ clearHistory: true } );
 
     }
 

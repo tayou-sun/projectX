@@ -1,16 +1,12 @@
 <RadSideDrawer drawerTransition="PushTransition">
 
 	<GridLayout tkDrawerContent rows="auto, *" class="sidedrawer sidedrawer-left">
-		<StackLayout class="sidedrawer-header">
-
-		</StackLayout>
-
 		<ScrollView row="1">
 			<StackLayout class="sidedrawer-content">
 
 				<StackLayout class="hr-light"></StackLayout>
 
-				<GridLayout row="0" columns="auto, *" class="sidedrawer-list-item" >
+				<!-- <GridLayout row="0" columns="auto, *" class="sidedrawer-list-item" >
 					<Label row="0" col="0" text="&#xf073;" class="fas"></Label>
 					<Label row="0" col="1" text="Календарь" class="m-l-20 sidedrawer-item"
 						(tap)="chooseCity($event)"></Label>
@@ -43,13 +39,13 @@
                 <GridLayout  row="3" columns="auto, *" class="sidedrawer-list-item">
 					<Label row="0" col="0" text="&#xf201;" class="fas"></Label>
 					<Label row="0" col="1" text="Графики" class="m-l-20 sidedrawer-item" (tap)="charts($event)"></Label>
-				</GridLayout>
+				</GridLayout> -->
                 
+				<ns-navbar-list></ns-navbar-list>
 			</StackLayout>
 		</ScrollView>
 	</GridLayout>
 
 	<page-router-outlet tkMainContent></page-router-outlet>
-
 
 </RadSideDrawer>

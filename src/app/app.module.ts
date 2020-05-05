@@ -6,23 +6,20 @@ import { AppComponent } from "./app.component";
 import { NativeScriptUISideDrawerModule } from "nativescript-ui-sidedrawer/angular/side-drawer-directives";
 import { NativeScriptFormsModule } from "nativescript-angular/forms";
 import { CalendarComponent } from './calendar/calendar.component';
-import { EventCreateComponent } from './event-create/event-create.component';
 import { NativeScriptDateTimePickerModule } from "nativescript-datetimepicker/angular";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ProblemSearchComponent } from './problem-search/problem-search.component';
-import { TasksComponent } from './tasks/tasks.component';
-import { TasksService } from "./services/tasks.service";
-import { TaskCreateComponent } from './task-create/task-create.component';
-
-import { ArticlesComponent } from './articles/articles.component';
-import { ArticlesDataService } from "./services/article.data.service";
 import { HttpClientModule } from "@angular/common/http";
 import { NgShadowModule } from 'nativescript-ng-shadow';
-import { UserComponent } from './components/user/user.component';
 import { NativeScriptPickerModule } from "nativescript-picker/angular";
-import { ProblemPickerComponent } from './components/problem-picker/problem-picker.component';
-import { ProblemsDataService } from "./services/problem.data.service";
 import { HomeModule } from "./home/home.module";
+import { ProblemsComponent } from './components/problems/problems.component';
+import { CoreModule } from "./core/core.module";
+import { SharedModule } from "./shared/shared.module";
+import { DayBookComponent } from './components/day-book/day-book.component';
+import { DayBookModule } from "./components/day-book/day-book.module";
+import { ArticlesDataService } from "./core/services/article.data.service";
+import { TasksService } from "./core/services/tasks.service";
+import { ProblemsDataService } from "./core/services/problem.data.service";
 import { FavouriteComponent } from './components/favourite/favourite.component';
 import { TaskCalendarService } from "./services/task-calendar.service";
 import { ChartsComponent } from './charts/charts.component';
@@ -49,18 +46,22 @@ import { PollsComponent } from './polls/polls.component';
         NativeScriptUISideDrawerModule,
         NativeScriptDateTimePickerModule,
         FontAwesomeModule,
-        HttpClientModule,
         NgShadowModule,
         NativeScriptPickerModule,
         HomeModule,
-        FontAwesomeModule
+        FontAwesomeModule,
+        CoreModule,
+        SharedModule,
+        DayBookModule
     ],
     declarations: [
         AppComponent,
         CalendarComponent,
         ChartsComponent,
         PollResultsComponent,
-        PollsComponent
+        PollsComponent,
+        ProblemsComponent
+        
     ],
     providers:[
         ArticlesDataService,
@@ -70,6 +71,7 @@ import { PollsComponent } from './polls/polls.component';
         PollResultsService,
         PollsService
     ],
+
     schemas: [
         NO_ERRORS_SCHEMA
     ]

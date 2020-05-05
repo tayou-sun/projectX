@@ -1,8 +1,6 @@
 import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { NativeScriptCommonModule } from "nativescript-angular/common";
 
-import { HomeRoutingModule } from "./home-routing.module";
-import { HomeComponent } from "./home.component";
 import { RouterExtensions } from "nativescript-angular/router";
 import { Page, EventData } from "tns-core-modules/ui/page/page";
 import { NavbarComponent } from "../shared/navbar/navbar.component";
@@ -19,36 +17,22 @@ import { TasksComponent } from "../tasks/tasks.component";
 import { TaskCreateComponent } from "../task-create/task-create.component";
 import { EventCreateComponent } from "../event-create/event-create.component";
 import { FavouriteComponent } from "../components/favourite/favourite.component";
-import { SharedModule } from "../shared/shared.module";
+import { CommonModule } from "@angular/common";
+
 
 @NgModule({
-    imports: [
-        NativeScriptCommonModule,
-        HomeRoutingModule,
-        NativeScriptUISideDrawerModule,
-        NativeScriptUIListViewModule,
-        NativeScriptUICalendarModule,
-        NativeScriptUIGaugeModule,
-        NativeScriptCommonModule,
-        HomeRoutingModule,
-        NativeScriptFormsModule,
-        SharedModule
-    ],
-    declarations: [
-        HomeComponent,
-        ArticlesComponent,
-        UserComponent,
-        TasksComponent,
-        TaskCreateComponent,
-        EventCreateComponent,
-        FavouriteComponent
-        
-    ],
-    schemas: [
-        NO_ERRORS_SCHEMA
-    ]
+  imports: [
+    NativeScriptCommonModule,
+        CommonModule
+  ],
+  declarations: [
+    NavbarComponent,
+    ProblemPickerComponent,
+    ProblemSearchComponent
+  ],
+  exports: [
+    NavbarComponent,
+    ProblemPickerComponent
+  ]
 })
-export class HomeModule {
-
-   
- }
+export class SharedModule {}

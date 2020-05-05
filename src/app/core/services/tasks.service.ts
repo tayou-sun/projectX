@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Task } from '../models/task.model';
 import { TaskCreateModel } from '../models/task-create.model';
 
 @Injectable({
