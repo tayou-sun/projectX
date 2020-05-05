@@ -32,7 +32,7 @@ onItemTap(args: ItemEventData): void {
       this.tasks = x;
       
 
-      console.log(this.tasks);
+      console.log("____________"+x);
     });
     
     var d = new Date();

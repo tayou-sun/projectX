@@ -1,10 +1,12 @@
-/* Add mobile styles for the component here.  */
+
 .menu-icon{
-    font-size: 20px;
     padding-left: 20px;
     color: aliceblue;
+    font-family: "Stag Sans", Arial, sans-serif;
+    
 }
 
 .action-bar{
     background:  #3fb0ac;
+    font-weight: 800;
 }

@@ -1,7 +1,6 @@
-
-.btn{
+.btn {
     font-size: 15;
-    background: rgb(93, 203, 240);
+    background: #fae596;
     color: white;
     border-radius: 20px;
     padding: 10;
@@ -9,8 +8,8 @@
     horizontal-align: center;
 }
 
-.poll-title__color_basic{
-    font-size: 17px;
+.poll-title__color_basic {
     margin-left: 10;
-   
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 16px;
 }

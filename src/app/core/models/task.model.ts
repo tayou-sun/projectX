@@ -1,8 +1,8 @@
 export class Task{
-    public Id? : number;
-    public Title? : string;
-    public Start? : Date;
-    public IsPeriodic?: boolean;
-    public IntervalInDays? : number;
-    public End?: Date;
+    public id? : number;
+    public title? : string;
+    public start? : Date;
+    public isPeriodic?: boolean;
+    public intervalInDays? : number;
+    public end?: Date;
 }

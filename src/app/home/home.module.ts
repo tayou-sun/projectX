@@ -20,6 +20,7 @@ import { TaskCreateComponent } from "../task-create/task-create.component";
 import { EventCreateComponent } from "../event-create/event-create.component";
 import { FavouriteComponent } from "../components/favourite/favourite.component";
 import { SharedModule } from "../shared/shared.module";
+import { NativeScriptDateTimePickerModule } from "nativescript-datetimepicker/angular";
 
 @NgModule({
     imports: [
@@ -32,7 +33,9 @@ import { SharedModule } from "../shared/shared.module";
         NativeScriptCommonModule,
         HomeRoutingModule,
         NativeScriptFormsModule,
-        SharedModule
+        SharedModule,
+        NativeScriptCommonModule,
+        NativeScriptDateTimePickerModule
     ],
     declarations: [
         HomeComponent,

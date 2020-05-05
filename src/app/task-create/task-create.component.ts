@@ -32,7 +32,7 @@ export class TaskCreateComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('current date' + this.currentDate);
-    this.selectedTime = new Date();
+    /* this.selectedTime = new Date(); */
     // this.selectedTime.hours = this.currentDate.getHours();
     // this.selectedTime.hours = this.currentDate.getMinutes();
   }
@@ -72,7 +72,8 @@ export class TaskCreateComponent implements OnInit {
         // let date = (<TextField>event).text;
         // console.log('selected ' + date);
         if(this.task.Start == null){
-          this.task.Start = new Date();
+          var date = new Date();
+          this.task.Start = date;
         }
         this.time = result.hour + ':' + result.minute;
         this.task.Start.setHours(result.hour);
@@ -91,25 +92,34 @@ export class TaskCreateComponent implements OnInit {
   onCreateButtonClick(event): void {
 
     console.log('tap create task');
-    console.log(this.selectedTime);
+    console.log("selectedTime   ", this.selectedTime);
     console.log(this.selectedDate);
     // this.task.IsPeriodic = false;
     
+    if(this.selectedDate != null){
+      this.task.Start = new Date(this.selectedDate);
+    
+      this.task.Start.setHours(this.selectedTime.getHours()+3);
+      this.task.Start.setMinutes(this.selectedTime.getMinutes());
+
+// this.task.Start.setTime(this.selectedTime.);
+      console.log('------Selected date ' +this.selectedDate);
+      console.log('------Selected time' + this.selectedTime);
+    }else{
+      this.task.Start = new Date();
+      console.log('Selected date is null' +this.selectedDate);
+    }
+    
+    if(this.task.Start == null){
+      var date = new Date();
+      this.task.Start = date;
+    }
+
     this.taskSevices.create(this.task).subscribe((x: any) => {
-      console.log('Time '+this.time);
+      console.log('Time ----- ', x);
+      console.log('Time ----- ', JSON.stringify(x));
 
-      if(this.selectedDate != null){
-        this.task.Start = new Date(this.selectedDate);
-        this.task.Start.setHours(this.selectedTime.getHours());
-        this.task.Start.setMinutes(this.selectedTime.getMinutes());
-
-        // this.task.Start.setTime(this.selectedTime.);
-        console.log('------Selected date ' +this.selectedDate);
-        console.log('------Selected time' + this.selectedTime);
-      }else{
-        this.task.Start = new Date();
-        console.log('Selected date is null' +this.selectedDate);
-      }
+    
       console.log("created task");
       console.log(JSON.stringify(x));
       this.router.navigate(["tasks"],{ clearHistory: true } );

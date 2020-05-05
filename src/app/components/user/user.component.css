@@ -1,15 +1,17 @@
 /* Add mobile styles for the component here.  */
+
 .body {
     background-color: #ffffff;
 }
 
 .scf-input {
     border-bottom-width: 1;
-    border-bottom-color:rgb(192, 189, 189);
- margin-left:30;
- margin-right:30;
- margin-top: 20;
+    border-bottom-color: rgb(192, 189, 189);
+    margin-left: 30;
+    margin-right: 30;
+    margin-top: 20;
     height: 28;
+    font-size: 16px;
 }
 
 .btn-return {
@@ -31,41 +33,40 @@
     tint-color: #024184;
 }
 
-.label{
+.label {
     margin: 23;
     width: 100;
     font-size: 16px;
 }
 
-.input{
+.input {
     margin: 30;
     border-bottom-color: grey;
     background-color: grey;
     font-size: 16px;
 }
 
-.btn{
+.btn {
     margin-top: 30;
     font-size: 20;
     background: rgba(122, 186, 238, 0.5);
-    margin-left:30;
+    margin-left: 30;
     color: rgb(40, 40, 41);
-    margin-right:30;
+    margin-right: 30;
     margin-bottom: 50;
-    
 }
-
 
 .login-label {
     horizontal-align: center;
     color: #A8A8A8;
     font-size: 16;
-  
-  }
+}
 
-  .sign-up-label {
+.sign-up-label {
     margin-top: 40;
-  }
+}
+
+
 /* .form{
     margin: 23;
 } */

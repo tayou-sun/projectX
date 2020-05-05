@@ -2,14 +2,14 @@
 </ActionBar>
  -->
 
- <ns-navbar title="Новый пользователь" ></ns-navbar>
+<ns-navbar title="Новый пользователь"></ns-navbar>
 
 <ScrollView>
     <StackLayout>
         <GridLayout rows="*, *, *, *, *" columns="80, *" class="form">
 
             <Label row="0" col="0" text="ФИО" horizontalAlignment="left" class="label"></Label>
-            <TextField row="0" col="1" [(ngModel)]="fio" hint="" class="input input-border" [backgroundColor="greyed">
+            <TextField row="0" col="1" [(ngModel)]="fio" hint="" class="input input-border">
             </TextField>
 
             <Label row="1" col="0" text="Возраст" horizontalAlignment="left" class="label"></Label>
@@ -18,8 +18,7 @@
 
             <Label row="2" col="0" text="Пол" horizontalAlignment="left" class="label"></Label>
 
-            <Label row="2" col="1" colSpan="1" hint="" class="scf-input" editable="false" [text]="typeOfService"
-                (tap)="onTypeServiceTap()" ></Label>
+            <Label row="2" col="1" colSpan="1" hint="" class="scf-input" editable="false" [text]="typeOfService" (tap)="onTypeServiceTap()"></Label>
 
 
         </GridLayout>

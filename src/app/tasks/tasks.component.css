@@ -3,7 +3,7 @@
     height: 60;
     width: 60; 
     margin: 15;
-    background-color: #ff4081;
+    background-color: #fae596;
     horizontal-align: right;
     vertical-align: bottom;
     color: white;
@@ -26,5 +26,6 @@
 }
 
 .task-text{
-    font-size: 18;
+    font-family:Roboto, Arial, sans-serif;
+font-size:16px;
 }

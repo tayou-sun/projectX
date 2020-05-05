@@ -19,7 +19,6 @@ export class ArticlesComponent implements OnInit {
 
   public addFavourite(event){
     this.dataService.postFavourite(event).subscribe(_=>{
-      this.articles = [{title: "Fdfd"}];
     });
   }
 

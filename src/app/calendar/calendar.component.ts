@@ -3,7 +3,8 @@ import * as calendarModule from "nativescript-ui-calendar";
 import { Router } from '@angular/router';
 import { Color } from 'tns-core-modules/color/color';
 import { TaskCalendarService } from '../services/task-calendar.service';
-import { Task } from '../models/task.model';
+import { Task } from '../core/models/task.model';
+
 
 @Component({
     selector: 'ns-calendar',
