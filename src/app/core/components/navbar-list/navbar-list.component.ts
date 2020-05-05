@@ -46,4 +46,9 @@ export class NavbarListComponent {
       this.router.navigate(["day-book"], { clearHistory: true }); 
   }
 
+  charts(event){
+    this.router.navigate(["charts"], { clearHistory: true }); 
+  }
+
+
 }

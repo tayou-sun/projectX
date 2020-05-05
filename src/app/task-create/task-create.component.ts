@@ -21,7 +21,7 @@ export class TaskCreateComponent implements OnInit {
   task: TaskCreateModel = new TaskCreateModel();
   date: string = "" ;
   time: string = "" ;
-  public currentDate: Date = new Date();
+  currentDate: Date = new Date();
   public currentTime: Date = new Date();
   public selectedDate: Date = new Date();
   public selectedTime: Date = new Date();
@@ -100,6 +100,7 @@ export class TaskCreateComponent implements OnInit {
 
       if(this.selectedDate != null){
         this.task.Start = new Date(this.selectedDate);
+        console.log('-----------Selected hours' +this.selectedTime);
         this.task.Start.setHours(this.selectedTime.getHours());
         this.task.Start.setMinutes(this.selectedTime.getMinutes());
 
@@ -108,13 +109,14 @@ export class TaskCreateComponent implements OnInit {
         console.log('------Selected time' + this.selectedTime);
       }else{
         this.task.Start = new Date();
-        console.log('Selected date is null' +this.selectedDate);
+        console.log('Selected date is null' + this.selectedDate);
       }
       console.log("created task");
       console.log(JSON.stringify(x));
-      this.router.navigate(["tasks"],{ clearHistory: true } );
+      
 
     });
+    this.router.navigate(["tasks"],{ clearHistory: true } );
   }
 
 }

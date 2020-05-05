@@ -1,4 +1,4 @@
-<ActionBar title="Графики"></ActionBar>
+<ActionBar [title]="pageTitle"></ActionBar>
 
 
 <GridLayout rows="auto, *" style="height: 80%;">
@@ -21,10 +21,11 @@
                     categoryProperty='date' 
                     valueProperty="value" 
                     strokeColorProperty="color" 
+                    
                     seriesName="Bar">
         </BarSeries>
         <Palette tkCartesianPalette seriesName="Bar">
-			<PaletteEntry tkCartesianPaletteEntry ></PaletteEntry>
+			<PaletteEntry tkCartesianPaletteEntry fillColor="#bb1620"></PaletteEntry>
         </Palette>
 	</RadCartesianChart>
 </GridLayout>

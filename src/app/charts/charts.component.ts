@@ -4,6 +4,7 @@ import { PollsService } from '../services/polls.service';
 import { PollResultsService } from '../services/poll-results.service';
 import { Poll } from '../models/poll.model';
 import { PollResult } from '../models/poll-result.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'ns-charts',
@@ -11,6 +12,8 @@ import { PollResult } from '../models/poll-result.model';
   styleUrls: ['./charts.component.css']
 })
 export class ChartsComponent implements OnInit {
+
+  id: number=0;;
 
   public favoriteFruits  = [
     { type: "20.03.2020", count: 12 , color:"#43A047"},
@@ -21,16 +24,22 @@ export class ChartsComponent implements OnInit {
 ];
 
   public polls: PollResult[];
+  pageTitle = "Оценка риска падения";
 
-  constructor(public pollService: PollsService , public pollResultService: PollResultsService) { }
+  constructor(public pollService: PollsService , 
+      private route: ActivatedRoute,
+    public pollResultService: PollResultsService) { }
 
   ngOnInit(): void {
     this.getPolls();
   }
 
   getPolls(): void{
-    let pollId = 1;
-    this.pollResultService.getResuts(pollId).subscribe((x:PollResult[])=>{
+     this.route.params.subscribe(params=>this.id = params['pollId']);
+
+     this.id = this.id == 0 || this.id ==undefined ? 1: this.id;
+
+    this.pollResultService.getResuts(this.id).subscribe((x:PollResult[])=>{
       this.polls = x;
     });
   }
