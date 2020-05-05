@@ -41,6 +41,7 @@ export class ChartsComponent implements OnInit {
 
     this.pollResultService.getResuts(this.id).subscribe((x:PollResult[])=>{
       this.polls = x;
+      this.pageTitle = x[0].pollTitle;
     });
   }
 
