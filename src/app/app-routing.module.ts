@@ -9,6 +9,8 @@ import { ArticlesComponent } from "./articles/articles.component";
 import { UserComponent } from "./components/user/user.component";
 import { ProblemPickerComponent } from "./components/problem-picker/problem-picker.component";
 import { FavouriteComponent } from "./components/favourite/favourite.component";
+import { ChartsComponent } from "./charts/charts.component";
+import { PollsComponent } from "./polls/polls.component";
 
 const routes: Routes = [
     { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -23,6 +25,8 @@ const routes: Routes = [
     { path: "problems", component: ProblemPickerComponent },
     { path: "*", redirectTo: "/home", pathMatch: "full" },
     { path: "favourite", component: FavouriteComponent },
+    { path: "charts", component: ChartsComponent },
+    { path: "polls", component: PollsComponent },
     
 ];
 

@@ -43,4 +43,8 @@ export class AppComponent {
         this.router.navigate(["favourite"], { clearHistory: true }); 
     }
 
+    charts(event){
+        this.router.navigate(["charts"], { clearHistory: true }); 
+    }
+
  }

@@ -25,12 +25,24 @@ import { ProblemsDataService } from "./services/problem.data.service";
 import { HomeModule } from "./home/home.module";
 import { FavouriteComponent } from './components/favourite/favourite.component';
 import { TaskCalendarService } from "./services/task-calendar.service";
+import { ChartsComponent } from './charts/charts.component';
+import { PollResultsService } from "./services/poll-results.service";
+import { PollsService } from "./services/polls.service";
+import { PollResultsComponent } from './poll-results/poll-results.component';
+import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular/listview-directives";
+import { NativeScriptUIChartModule } from "nativescript-ui-chart/angular";
+import { NativeScriptUICalendarModule } from "nativescript-ui-calendar/angular/calendar-directives";
+import { PollsComponent } from './polls/polls.component';
 
 @NgModule({
     bootstrap: [
         AppComponent
     ],
     imports: [
+        NativeScriptUISideDrawerModule,
+        NativeScriptUIListViewModule,
+        NativeScriptUICalendarModule,
+        NativeScriptUIChartModule,
         NativeScriptModule,
         AppRoutingModule,
         NativeScriptFormsModule,
@@ -45,13 +57,18 @@ import { TaskCalendarService } from "./services/task-calendar.service";
     ],
     declarations: [
         AppComponent,
-        CalendarComponent
+        CalendarComponent,
+        ChartsComponent,
+        PollResultsComponent,
+        PollsComponent
     ],
     providers:[
         ArticlesDataService,
         TasksService,
         ProblemsDataService,
-        TaskCalendarService
+        TaskCalendarService,
+        PollResultsService,
+        PollsService
     ],
     schemas: [
         NO_ERRORS_SCHEMA
