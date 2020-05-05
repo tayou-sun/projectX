@@ -44,7 +44,7 @@ import { TaskCalendarService } from "./services/task-calendar.service";
     ],
     declarations: [
         AppComponent,
-        CalendarComponent,
+       
         ProblemsComponent
         
     ],

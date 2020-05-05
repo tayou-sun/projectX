@@ -66,12 +66,8 @@ export class ProfileComponent implements OnInit {
 
   }
 
-  onItemTap(event){
-    console.log(event)
-  }
-
   postResult(questionId: number, questionItemId: number) {
-
+    console.log("-------------sssssssssssss____id", this.a)
     this.dataService.postProfileQuestion(this.a, questionId, questionItemId).subscribe(_ => {
       console.log("-------------sssssssssssss____id", this.a)
       this.getCurrentProfileQuestion(this.a);

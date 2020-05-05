@@ -21,6 +21,7 @@ import { EventCreateComponent } from "../event-create/event-create.component";
 import { FavouriteComponent } from "../components/favourite/favourite.component";
 import { SharedModule } from "../shared/shared.module";
 import { NativeScriptDateTimePickerModule } from "nativescript-datetimepicker/angular";
+import { CalendarComponent } from "../calendar/calendar.component";
 
 @NgModule({
     imports: [
@@ -44,7 +45,8 @@ import { NativeScriptDateTimePickerModule } from "nativescript-datetimepicker/an
         TasksComponent,
         TaskCreateComponent,
         EventCreateComponent,
-        FavouriteComponent
+        FavouriteComponent,
+        CalendarComponent
         
     ],
     schemas: [

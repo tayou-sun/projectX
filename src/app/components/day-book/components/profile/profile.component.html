@@ -9,21 +9,19 @@
         <ng-template nsTemplateKey="post" let-item="item">
             <GridLayout>
 
-                <GridLayout col="0" row="0"  >
-                    <Ripple rippleColor="#d50000">
-                        <Button col="1" class="h2" [text]="item.title" textWrap="true"
-                            (tap)="postResult(item.id, item.pollQuestionId)" [backgroundColor]="item.color"
-                           > 
+                <GridLayout col="0" row="0">
+                    <!--  <Ripple rippleColor="#d50000"></Ripple> -->
+                    <Button col="1" class="h2" [text]="item.title" textWrap="true" (tap)="postResult(item.id, item.pollQuestionId)" [backgroundColor]="item.color"> 
                     </Button>
 
-                    </Ripple>
+                    <!--   </Ripple> -->
                 </GridLayout>
 
 
 
 
 
-               
+
 
             </GridLayout>
 

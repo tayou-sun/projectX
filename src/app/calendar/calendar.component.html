@@ -1,31 +1,13 @@
-<ActionBar title="Календарь" class="action-bar">
-    <AbsoluteLayout>
-         <NavigationButton text="Go Back" ></NavigationButton>
-        <Label title="Календарь"></Label>
-        
-        <Button class="add-button" row="0" col="1" text="+" left="250" (tap)="onEmailSend($event)"></Button>
-    </AbsoluteLayout>
-</ActionBar>
-
-<!-- <ns-navbar title="Календарь" >
-    <AbsoluteLayout>
-        <Label title="Календарь"></Label>
-        <Button class="add-button" row="0" col="1" text="+" left="250" (tap)="onEmailSend($event)"></Button>
-    </AbsoluteLayout>
-</ns-navbar> -->
-
+<ns-navbar title="КАЛЕНДАРЬ" needActionItem="true">
+</ns-navbar>
 <GridLayout>
     <AbsoluteLayout tkMainContent width="100%" height="100%">
         <StackLayout top="0" left="0" width="100%" height="100%">
-            
-            <RadCalendar [eventSource]="calendarEvents" eventsViewMode="Inline" selectionMode="Single" viewMode="Month"
-                transitionMode="Stack" locale="en-US" (dateSelected)="onDateSelected($event)"
-                (dateDeselected)="onDateDeselected($event)" (navigatedToDate)="onNavigatedToDate($event)"
-                (navigatingToDateStarted)="onNavigatingToDateStarted($event)"
-                (viewModeChanged)="onViewModeChanged($event)"></RadCalendar>
+
+            <RadCalendar [eventSource]="calendarEvents" eventsViewMode="Inline" selectionMode="Single" viewMode="Month" transitionMode="Stack" locale="en-US" (dateSelected)="onDateSelected($event)" (dateDeselected)="onDateDeselected($event)" (navigatedToDate)="onNavigatedToDate($event)"
+                (navigatingToDateStarted)="onNavigatingToDateStarted($event)" (viewModeChanged)="onViewModeChanged($event)" locale="ru-RU"></RadCalendar>
         </StackLayout>
         <FlexboxLayout justifyContent="flex-end" width="100%" id="addButtonContainer" left="0" bottom="0">
-            <!-- <Button class="add-button" row="0" col="1" text="+" (tap)="onEmailSend($event)"></Button> -->
         </FlexboxLayout>
 
     </AbsoluteLayout>

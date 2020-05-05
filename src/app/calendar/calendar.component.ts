@@ -42,7 +42,6 @@ export class CalendarComponent implements OnInit {
         // this.router.navigate(["tasks-create"],{ clearHistory: true } );
 
     }
-
     ngOnInit(): void {
         console.log('init');
         this.calendarTaskService.get(2020, 5).subscribe((x: Task[]) => {

@@ -41,8 +41,10 @@
 
 .input {
     margin: 30;
-    border-bottom-color: grey;
-    background-color: grey;
+    /*     border-bottom-color: grey;
+ */
+    /*     background-color: grey;
+ */
     font-size: 16px;
 }
 

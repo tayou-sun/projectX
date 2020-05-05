@@ -195,7 +195,7 @@ html {
     justify-content: center;
     float: right;
     margin-left: 5;
-    background-color:  #8f91de;
+    background-color: #8f91de;
 }
 
 .owe-list-filter {
@@ -294,7 +294,7 @@ html {
     text-decoration: line-through;
 }
 
-.default-button {    
+.default-button {
     background-color: #8f91de;
     color: #fff;
     padding: 14 10;
@@ -375,7 +375,7 @@ html {
 
 .suggestion-item {
     border-width: 1;
-    border-color: #b8b8b8; 
+    border-color: #b8b8b8;
     padding: 10;
 }
 
