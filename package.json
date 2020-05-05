@@ -38,6 +38,7 @@
     "nativescript-push-notifications": "^1.1.6",
     "nativescript-ripple": "^2.2.1",
     "nativescript-ui-calendar": "^6.1.0",
+    "nativescript-ui-chart": "^7.1.1",
     "nativescript-ui-gauge": "^6.0.0",
     "nativescript-ui-listview": "^8.1.2",
     "nativescript-ui-sidedrawer": "^8.0.1",

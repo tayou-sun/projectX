@@ -3,7 +3,8 @@ import * as calendarModule from "nativescript-ui-calendar";
 import { Router } from '@angular/router';
 import { Color } from 'tns-core-modules/color/color';
 import { TaskCalendarService } from '../services/task-calendar.service';
-import { Task } from '../models/task.model';
+import { Task } from '../core/models/task.model';
+// import { Task } from '../models/task.model';
 
 @Component({
     selector: 'ns-calendar',
@@ -59,15 +60,16 @@ export class CalendarComponent implements OnInit {
         console.log('length  ' + this.calendarTask.length);
         for (let i = 0; i < this.calendarTask.length; i++) {
 
-            console.log(JSON.stringify(this.calendarTask[i]));
-            console.log('start   ' + this.calendarTask[i].start);
-            console.log('start time' + this.calendarTask[i].start.getTime());
+             console.log(JSON.stringify(this.calendarTask[i]));
+            // console.log('start   ' + this.calendarTask[i].start);
+            // console.log('task '+ this.calendarTask[i]);
+            // console.log('start time' + this.calendarTask[i].start);
             let now = new Date();
             // let startDate = new Date(now.getFullYear(), now.getMonth(), i * 2, 1);
             // let endDate = new Date(now.getFullYear(), now.getMonth(), (i * 2), 3);
-            let startDate: Date = this.calendarTask[i].start;//new Date(this.calendarTask[i].start.getMilliseconds());
-            let endDate: Date = (this.calendarTask[i].end == null ? this.calendarTask[i].start : this.calendarTask[i].end);
-            let event = new calendarModule.CalendarEvent(this.calendarTask[i].title,  startDate, startDate, false, colors[i * 10 % (colors.length - 1)]);
+            let startDate: Date = new Date(this.calendarTask[i].start);//new Date(this.calendarTask[i].start.getMilliseconds());
+            let endDate: Date = new Date(this.calendarTask[i].end == null ? this.calendarTask[i].start : this.calendarTask[i].end);
+            let event = new calendarModule.CalendarEvent(this.calendarTask[i].title,  startDate, endDate, false, colors[i * 10 % (colors.length - 1)]);
             events.push(event);
         }
         this.calendarEvents = events;

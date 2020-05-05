@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ProfileDataService } from '../../services/profile.data.service';
 import { Profile } from '~/app/core/models/profile';
 import { Poll } from '~/app/core/models/poll';
-import { registerElement } from 'nativescript-angular';
+import { registerElement, RouterExtensions } from 'nativescript-angular';
 
 var rp = require("nativescript-ripple");
 registerElement("Ripple", () => rp.Ripple);
@@ -20,7 +20,9 @@ export class ProfileComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dataService: ProfileDataService) {
+    private dataService: ProfileDataService,
+    public router: RouterExtensions
+    ) {
 
     this.routeSubscription = route.params.subscribe(params => this.currentPoleId = params['id']);
   }
@@ -29,7 +31,7 @@ export class ProfileComponent implements OnInit {
   public currentProfileId: number = 0;
   public questionTitle: string = "";
   public questions: any[] = [];
-  public a: number = 0;
+  public pollId: number = 0;
   counter: number = 0;
   pageTitle: string = "";
 
@@ -48,18 +50,18 @@ export class ProfileComponent implements OnInit {
   }
 
   getCurrentProfileQuestion(id) {
-    this.a = id;
+    this.pollId = id;
     this.dataService.getProfileQuestion(id).subscribe((poll: Poll) => {
       console.log("-------------sssssssssssss", poll)
       if (poll !== null) {
         this.questions = poll.pollQuestionItems;
         this.questionTitle = poll.title;
         this.counter++;
-
+        
         this.pageTitle = `Вопрос ${this.counter}`
       }
       else {
-
+        this.router.navigate(["char",this.pollId],{ clearHistory: true } );
       }
     })
 
@@ -72,9 +74,9 @@ export class ProfileComponent implements OnInit {
 
   postResult(questionId: number, questionItemId: number) {
 
-    this.dataService.postProfileQuestion(this.a, questionId, questionItemId).subscribe(_ => {
-      console.log("-------------sssssssssssss____id", this.a)
-      this.getCurrentProfileQuestion(this.a);
+    this.dataService.postProfileQuestion(this.pollId, questionId, questionItemId).subscribe(_ => {
+      console.log("-------------sssssssssssss____id", this.pollId)
+      this.getCurrentProfileQuestion(this.pollId);
     })
   }
 }
