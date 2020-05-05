@@ -5,6 +5,8 @@ import { PollResultsService } from '../services/poll-results.service';
 import { Poll } from '../models/poll.model';
 import { PollResult } from '../models/poll-result.model';
 import { ActivatedRoute } from '@angular/router';
+import { RadCartesianChart } from 'nativescript-ui-chart';
+import { Frame } from 'tns-core-modules/ui/frame/frame';
 
 @Component({
   selector: 'ns-charts',
@@ -32,6 +34,10 @@ export class ChartsComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPolls();
+  }
+
+  fillChart(){
+    const chart = <RadCartesianChart>Frame.topmost().getViewById("cartesianChart");
   }
 
   getPolls(): void{
